@@ -1,4 +1,4 @@
-# Scene Text End-to-end (Detection and Recognition) Resources
+# The State of the Art of Scene Text End-to-end (Detection and Recognition) 
 
 
 * 1 [Datasets](#Datasets)
