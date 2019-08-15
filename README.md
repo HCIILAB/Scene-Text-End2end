@@ -1,548 +1,660 @@
-# The State of the Art of Scene Text End-to-end (Detection and Recognition) 
+# End-to-End Scene Text Detection and Recognition System Resources
 
+<p align='right'>Author: Canjie Luo</p>
 
-* 1 [Datasets](#Datasets)
-* 2 [End-to-end Results](#Results)
-* 3 [Reference (paper, code)](#Reference)
+<!-- MarkdownTOC -->
 
-## Datasets
-- **Street View Text (SVT)** [SVT-download](http://vision.ucsd.edu/~kai/grocr/)
+- [1.Datasets](#1-datasets)
+- [2. Summary of End-to-end Scene Text Detection and Recognition Methods](#2-summary-of-end2end-results)
+    - [2.1 Comparison of methods](#21-comparison-of-methods)
+    - [2.2 End-to-end scene text detection and recognition results](#22-end2end-result)
+- [3. Survey](#3-field-survey)
+- [4. OCR Service](#4-ocr-service)
+- [5. Reference and codes](#5-references)
 
-  **Introduction:** There are 100 training images and 250 testing images downloaded from Google Street View of road-side scenes. The labelled text can be very challenging with a wide variety of fonts, orientations, and lighting conditions. A lexicon containing 50 words (SVT-50) is also provided for each image. 
+<!-- /MarkdownTOC -->
 
-  * K. Wang, B. Babenko, and S. Belongie, “End-to-end scene text recognition,” in Proc. IEEE ICCV, Nov. 2011, pp. 1457–1464.
+------
 
-- **ICDAR 2003(IC03)** [IC03-download](http://www.iapr-tc11.org/mediawiki/index.php?title=ICDAR_2003_Robust_Reading_Competitions)
+<a id="1-datasets"></a>
+## 1. Datasets
+- SVT：
+  * **Introduction:** There are 100 training images and 250 testing images downloaded from Google Street View of road-side scenes. The labelled text can be very challenging with a wide variety of fonts, orientations, and lighting conditions. A lexicon containing 50 words (SVT-50) is also provided for each image.
+  * **Link:** [SVT-download](http://vision.ucsd.edu/~kai/grocr/)
 
-  **Introduction:** The dataset contains a varied array of photos of the world that contain scene text. There are 251 testing images with 50 word lexicons (IC03-50) and a lexicon of all test groundtruth words (IC03-Full). 
-  * S. M. Lucas, A. Panaretos, L. Sosa, A. Tang, S. Wong, and R. Young, “ICDAR 2003 robust reading competitions,” in Proc. 7th ICDAR, Aug. 2003, pp. 682–687.
+- ICDAR 2003(IC03)：
+  * **Introduction:** The dataset contains a varied array of photos of the world that contain scene text. There are 251 testing images with 50 word lexicons (IC03-50) and a lexicon of all test groundtruth words (IC03-Full).
+  * **Link:** [IC03-download](http://www.iapr-tc11.org/mediawiki/index.php?title=ICDAR_2003_Robust_Reading_Competitions)
 
-- **ICDAR 2011(IC11)** [IC11-download](http://robustreading.opendfki.de/trac/wiki/SceneText)
+- ICDAR 2011(IC11):
+  * **Introduction:** The dataset is an extension to the dataset used for the text locating competitions of ICDAR 2003.It includes 485 natural images in total.
+  * **Link:** [IC11-download](http://www.cvc.uab.es/icdar2011competition/?com=downloads)   
 
-  **Introduction:** The dataset is an extension to the dataset used for the text locating competitions of ICDAR 2003.It includes 485 natural images in total. 
+- ICDAR 2013(IC13)：
+  * **Introduction:** The dataset consists of 229 training images and 233 testing images. Most text are horizontal. Three speciﬁc lexicons are provided, named as “Strong(S)”, “Weak(W)” and “Generic(G)”. “Strong(S)” lexicon provides 100 words per-image including all words that appear in the image. “Weak(W)” lexicon includes all words that appear in the entire test set. And “Generic(G)” lexicon is a 90k word vocabulary.
+  * **Link:** [IC13-download](http://dagdata.cvc.uab.es/icdar2013competition/?ch=2&com=downloads)
 
-  * A. Shahab, F. Shafait, and A. Dengel, “ICDAR 2011 robust reading competition challenge 2: Reading text in scene images,” in Proc. ICDAR, 2011, pp. 1491–1496.
+- ICDAR 2015(IC15)：
+  - **Introduction:** The dataset includes 1000 training images and 500 testing images captured by Google glasses. The text in the scene is in arbitrary orientations. Similar to ICDAR 2013, it also provides “Strong(S)”, “Weak(W)” and “Generic(G)” lexicons.
+  - **Link:** [IC15-download](http://rrc.cvc.uab.es/?ch=4&com=downloads)
 
+- Total-Text：
+  - **Introduction:** Except for the horizontal text and oriented text, Total-Text also consists of a lot of curved text. Total-Text contains 1255 training images and 300 test images. All images are annotated with polygons and transcriptions in word-level. A “Full” lexicon contains all words in test set is provided.
+  - **Link:** [Total-Text-download](https://github.com/cs-chan/Total-Text-Dataset)
 
-- **ICDAR 2013 (IC13)** [IC13-download](http://dagdata.cvc.uab.es/icdar2013competition/?ch=2&com=downloads)
+<a id="2-summary-of-end2end-results"></a>
+## 2. Summary of End-to-end Scene Text Detection and Recognition Methods
 
-  **Introduction:** The dataset consists of 229 training images and 233 testing images. Most text are horizontal. Three speciﬁc lexicons are provided, named as “Strong(S)”, “Weak(W)” and “Generic(G)”. “Strong(S)” lexicon provides 100 words per-image including all words that appear in the image. “Weak(W)” lexicon includes all words that appear in the entire test set. And “Generic(G)” lexicon is a 90k word vocabulary. 
-  * D. Karatzas, F. Shafait, S. Uchida, M. Iwamura, L. G. i Bigorda, S. R. Mestre, J. Mas, D. F. Mota, J. A. Almazan, and L. P. de las Heras. "ICDAR 2013 robust reading competition," in Proc. ICDAR, 2013, pp. 1484–1493.
-
-- **ICDAR 2015 (IC15)** [IC15-download](http://rrc.cvc.uab.es/?ch=4&com=downloads)
-
-  **Introduction:** The dataset includes 1000 training images and 500 testing images captured by Google glasses. The text in the scene is in arbitrary orientations. Similar to ICDAR 2013, it also provides “Strong(S)”, “Weak(W)” and “Generic(G)” lexicons. 
-
-  * D. Karatzas, L. Gomez-Bigorda, A. Nicolaou, S. Ghosh, A. Bagdanov, M. Iwamura, J. Matas, L. Neumann, V. R. Chandrasekhar, S. Lu, et al. "ICDAR 2015 competition on robust reading," in Proc. ICDAR, 2015, pp. 1156–1160. 
-
-- **Total-Text** [Total-Text-download](https://github.com/cs-chan/Total-Text-Dataset)
-
-  **Introduction:** Except for the horizontal text and oriented text, Total-Text also consists of a lot of curved text. Total-Text contains 1255 training images and 300 test images. All images are annotated with polygons and transcriptions in word-level. A “Full” lexicon contains all words in test set is provided. 
-
-  * Chng, C.K., Chan, C.S. "Total-text: A comprehensive dataset for scene text detection and recognition," in: Proc. ICDAR, 2017, pp. 935–942.
-
-## Results
-
-<table cellspacing="0" border="0" style='white-space: nowrap;'>
-	<colgroup width="157"></colgroup>
-	<colgroup width="132"></colgroup>
-	<colgroup width="764"></colgroup>
-	<colgroup width="246"></colgroup>
-	<colgroup width="296"></colgroup>
-	<colgroup width="98"></colgroup>
-	<colgroup span="3" width="62"></colgroup>
-	<colgroup width="57"></colgroup>
-	<colgroup width="44"></colgroup>
-	<colgroup width="38"></colgroup>
-	<colgroup width="40"></colgroup>
-	<colgroup width="38"></colgroup>
-	<colgroup width="40"></colgroup>
-	<colgroup width="44"></colgroup>
-	<colgroup width="40"></colgroup>
-	<colgroup span="6" width="35"></colgroup>
-	<colgroup width="38"></colgroup>
-	<colgroup width="41"></colgroup>
-	<colgroup width="47"></colgroup>
-	<colgroup width="63"></colgroup>
+<a id="21-comparison-of-methods"></a>
+### 2.1 Comparison of methods
+<table cellspacing="0" border="0">
+	<colgroup width="152"></colgroup>
+	<colgroup width="131"></colgroup>
+	<colgroup width="85"></colgroup>
+	<colgroup width="252"></colgroup>
+	<colgroup width="250"></colgroup>
+	<colgroup span="2" width="85"></colgroup>
+	<colgroup width="646"></colgroup>
 	<tr>
-		<td colspan=27 height="33" align="center" valign=middle>Scene Text End-to-end Results</td>
-		</tr>
-	<tr>
-		<td rowspan=3 height="57" align="center" valign=middle>Method</td>
-		<td rowspan=3 align="center" valign=middle>Model</td>
-		<td rowspan=3 align="center" valign=middle>Highlight</td>
-		<td rowspan=3 align="center" valign=middle>Detection</td>
-		<td rowspan=3 align="center" valign=middle>Recognition</td>
-		<td rowspan=3 align="center" valign=middle>SVT</td>
-		<td rowspan=3 align="center" valign=middle>SVT-50</td>
-		<td colspan=3 rowspan=2 align="center" valign=middle>IC03</td>
-		<td rowspan=3 align="center" valign=middle>IC11</td>
-		<td colspan=6 align="center" valign=middle>IC13</td>
-		<td colspan=6 align="center" valign=middle>IC15</td>
-		<td colspan=2 align="center" valign=middle>Total-text</td>
-		<td rowspan=3 align="center" valign=middle>Time</td>
-		<td rowspan=3 align="center" valign=middle>Source</td>
+		<td height="20" align="left"><b><font face="Arial">Method&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
+		<td align="left"><b><font face="Arial">Model</font></b></td>
+		<td align="left"><b><font face="Arial">Code</font></b></td>
+		<td align="left"><b><font face="Arial">Detection&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
+		<td align="left"><b><font face="Arial">Recognition&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
+		<td align="left"><b><font face="Arial">Time</font></b></td>
+		<td align="left"><b><font face="Arial">Source </font></b></td>
+		<td align="left"><b><font face="Arial">Highlight&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;</font></b></td>
 	</tr>
 	<tr>
-		<td colspan=3 align="center" valign=middle>End-to-end</td>
-		<td colspan=3 align="center" valign=middle>Spotting</td>
-		<td colspan=3 align="center" valign=middle>End-to-end</td>
-		<td colspan=3 align="center" valign=middle>Spotting</td>
-		<td rowspan=2 align="center" valign=middle>None</td>
-		<td rowspan=2 align="center" valign=middle>Full</td>
-		</tr>
-	<tr>
-		<td align="center" valign=middle sdval="50" sdnum="1033;">50</td>
-		<td align="center" valign=middle>Full</td>
-		<td align="center" valign=middle>None</td>
-		<td align="center" valign=middle>S</td>
-		<td align="center" valign=middle>W </td>
-		<td align="center" valign=middle>G</td>
-		<td align="center" valign=middle>S</td>
-		<td align="center" valign=middle>W </td>
-		<td align="center" valign=middle>G</td>
-		<td align="center" valign=middle>S</td>
-		<td align="center" valign=middle>W </td>
-		<td align="center" valign=middle>G</td>
-		<td align="center" valign=middle>S</td>
-		<td align="center" valign=middle>W </td>
-		<td align="center" valign=middle>G</td>
-		</tr>
-	<tr>
-		<td height="19" align="center" valign=middle>Wang et al. [1]</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle>Word Re-scoring for NMS</td>
-		<td align="center" valign=middle>Sliding windows and Random Ferns</td>
-		<td align="center" valign=middle>Pictorial Structures</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="51" sdnum="1033;">51</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="2011" sdnum="1033;">2011</td>
-		<td align="center" valign=middle>ICCV</td>
+		<td height="20" align="left" valign=middle><font face="Liberation Sans">Wang et al. [1]</font></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left" valign=middle><font face="Liberation Sans">Sliding windows and Random Ferns</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">Pictorial Structures</font></td>
+		<td align="left" valign=middle sdval="2011" sdnum="2052;"><font face="Liberation Sans">2011</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">ICCV</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">Word Re-scoring for NMS</font></td>
 	</tr>
 	<tr>
-		<td height="19" align="center" valign=middle>Wang et al. [2]</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle>CNN architecture</td>
-		<td align="center" valign=middle>CNN-based</td>
-		<td align="center" valign=middle>Sliding windows for classification</td>
-		<td align="center" valign=middle sdval="46" sdnum="1033;">46</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="72" sdnum="1033;">72</td>
-		<td align="center" valign=middle sdval="67" sdnum="1033;">67</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="2012" sdnum="1033;">2012</td>
-		<td align="center" valign=middle>ICPR</td>
+		<td height="20" align="left" valign=middle><font face="Liberation Sans">Wang et al. [2]</font></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left" valign=middle><font face="Liberation Sans">CNN-based</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">Sliding windows for classification</font></td>
+		<td align="left" valign=middle sdval="2012" sdnum="2052;"><font face="Liberation Sans">2012</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">ICPR</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">CNN architecture</font></td>
 	</tr>
 	<tr>
-		<td height="19" align="center" valign=middle>Jaderberg et al. [3]</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle>Data mining and annotation</td>
-		<td align="center" valign=middle>CNN-based and saliency maps</td>
-		<td align="center" valign=middle>CNN classifier</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="56" sdnum="1033;">56</td>
-		<td align="center" valign=middle sdval="80" sdnum="1033;">80</td>
-		<td align="center" valign=middle sdval="75" sdnum="1033;">75</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="2014" sdnum="1033;">2014</td>
-		<td align="center" valign=middle>ECCV</td>
+		<td height="20" align="left" valign=middle><font face="Liberation Sans">Jaderberg et al. [3]</font></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left" valign=middle><font face="Liberation Sans">CNN-based and saliency maps</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">CNN classifier</font></td>
+		<td align="left" valign=middle sdval="2014" sdnum="2052;"><font face="Liberation Sans">2014</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">ECCV</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">Data mining and annotation</font></td>
 	</tr>
 	<tr>
-		<td height="19" align="center" valign=middle>Alsharif et al. [4]</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle>Hybrid HMM maxout models</td>
-		<td align="center" valign=middle>CNN and hybrid HMM maxout models</td>
-		<td align="center" valign=middle>Segmentation-based</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="48" sdnum="1033;">48</td>
-		<td align="center" valign=middle sdval="77" sdnum="1033;">77</td>
-		<td align="center" valign=middle sdval="70" sdnum="1033;">70</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="2014" sdnum="1033;">2014</td>
-		<td align="center" valign=middle>ICLR</td>
+		<td height="20" align="left" valign=middle><font face="Liberation Sans">Alsharif et al. [4]</font></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left" valign=middle><font face="Liberation Sans">CNN and hybrid HMM maxout models</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">Segmentation-based</font></td>
+		<td align="left" valign=middle sdval="2014" sdnum="2052;"><font face="Liberation Sans">2014</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">ICLR</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">Hybrid HMM maxout models</font></td>
 	</tr>
 	<tr>
-		<td height="19" align="center" valign=middle>Yao et al. [5]</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle>(1) Detection and recognition features sharing. (2) Oriented-text. (3) A new dictionary search method</td>
-		<td align="center" valign=middle>Random Forest</td>
-		<td align="center" valign=middle>Component Linking and Word Partition</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="48.6" sdnum="1033;">48.6</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="2014" sdnum="1033;">2014</td>
-		<td align="center" valign=middle>TIP</td>
+		<td height="20" align="left" valign=middle><font face="Liberation Sans">Yao et al. [5]</font></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left" valign=middle><font face="Liberation Sans">Random Forest</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">Component Linking and Word Partition</font></td>
+		<td align="left" valign=middle sdval="2014" sdnum="2052;"><font face="Liberation Sans">2014</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">TIP</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">(1) Detection and recognition features sharing. (2) Oriented-text. (3) A new dictionary search method</font></td>
 	</tr>
 	<tr>
-		<td height="19" align="center" valign=middle>Neumann et al. [6]</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle>Real-time performance(1.6s/image)</td>
-		<td align="center" valign=middle>Extremal Regions</td>
-		<td align="center" valign=middle>Clustering algorithm to group characters</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="68.1" sdnum="1033;">68.1</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="45.2" sdnum="1033;">45.2</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="35" sdnum="1033;">35</td>
-		<td align="center" valign=middle sdval="19.9" sdnum="1033;">19.9</td>
-		<td align="center" valign=middle sdval="15.6" sdnum="1033;">15.6</td>
-		<td align="center" valign=middle sdval="35" sdnum="1033;">35</td>
-		<td align="center" valign=middle sdval="19.9" sdnum="1033;">19.9</td>
-		<td align="center" valign=middle sdval="15.6" sdnum="1033;">15.6</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="2015" sdnum="1033;">2015</td>
-		<td align="center" valign=middle>TPAMI</td>
+		<td height="20" align="left" valign=middle><font face="Liberation Sans">Neumann et al. [6]</font></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left" valign=middle><font face="Liberation Sans">Extremal Regions</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">Clustering algorithm to group characters</font></td>
+		<td align="left" valign=middle sdval="2015" sdnum="2052;"><font face="Liberation Sans">2015</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">TPAMI</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">Real-time performance(1.6s/image)</font></td>
 	</tr>
 	<tr>
-		<td height="19" align="center" valign=middle>Jaderberg et al. [7]</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle>Trained only on data produced by a synthetic text generation engine, requiring no human labelled data</td>
-		<td align="center" valign=middle>Region proposal mechanism</td>
-		<td align="center" valign=middle>Word-level classification</td>
-		<td align="center" valign=middle sdval="53" sdnum="1033;">53</td>
-		<td align="center" valign=middle sdval="76" sdnum="1033;">76</td>
-		<td align="center" valign=middle sdval="90" sdnum="1033;">90</td>
-		<td align="center" valign=middle sdval="86" sdnum="1033;">86</td>
-		<td align="center" valign=middle sdval="78" sdnum="1033;">78</td>
-		<td align="center" valign=middle sdval="76" sdnum="1033;">76</td>
-		<td align="center" valign=middle sdval="76" sdnum="1033;">76</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="2016" sdnum="1033;">2016</td>
-		<td align="center" valign=middle>IJCV</td>
+		<td height="20" align="left" valign=middle><font face="Liberation Sans">Jaderberg et al. [7]</font></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left" valign=middle><font face="Liberation Sans">Region proposal mechanism</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">Word-level classification</font></td>
+		<td align="left" valign=middle sdval="2016" sdnum="2052;"><font face="Liberation Sans">2016</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">IJCV</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">Trained only on data produced by a synthetic text generation engine, requiring no human labelled data</font></td>
 	</tr>
 	<tr>
-		<td height="19" align="center" valign=middle>Liao et al. [8]</td>
-		<td align="center" valign=middle>TextBoxes</td>
-		<td align="center" valign=middle>An end-to-end trainable fast scene text detector</td>
-		<td align="center" valign=middle>SSD-based framework</td>
-		<td align="center" valign=middle>CRNN</td>
-		<td align="center" valign=middle sdval="64" sdnum="1033;">64</td>
-		<td align="center" valign=middle sdval="84" sdnum="1033;">84</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="87" sdnum="1033;">87</td>
-		<td align="center" valign=middle sdval="91" sdnum="1033;">91</td>
-		<td align="center" valign=middle sdval="89" sdnum="1033;">89</td>
-		<td align="center" valign=middle sdval="84" sdnum="1033;">84</td>
-		<td align="center" valign=middle sdval="94" sdnum="1033;">94</td>
-		<td align="center" valign=middle sdval="92" sdnum="1033;">92</td>
-		<td align="center" valign=middle sdval="87" sdnum="1033;">87</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="36.3" sdnum="1033;">36.3</td>
-		<td align="center" valign=middle sdval="48.9" sdnum="1033;">48.9</td>
-		<td align="center" valign=middle sdval="2017" sdnum="1033;">2017</td>
-		<td align="center" valign=middle>AAAI</td>
+		<td height="20" align="left" valign=middle><font face="Liberation Sans">Liao et al. [8]</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">TextBoxes</font></td>
+		<td align="left" sdnum="2052;0;@">✓</td>
+		<td align="left" valign=middle><font face="Liberation Sans">SSD-based framework</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">CRNN</font></td>
+		<td align="left" valign=middle sdval="2017" sdnum="2052;"><font face="Liberation Sans">2017</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">AAAI</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">An end-to-end trainable fast scene text detector</font></td>
 	</tr>
 	<tr>
-		<td height="19" align="center" valign=middle>Bŭsta et al. [9]</td>
-		<td align="center" valign=middle>Deep TextSpotter</td>
-		<td align="center" valign=middle>First end-to-end trainable detection and recognition system</td>
-		<td align="center" valign=middle>Yolo v2</td>
-		<td align="center" valign=middle>CTC</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="89" sdnum="1033;">89</td>
-		<td align="center" valign=middle sdval="86" sdnum="1033;">86</td>
-		<td align="center" valign=middle sdval="77" sdnum="1033;">77</td>
-		<td align="center" valign=middle sdval="92" sdnum="1033;">92</td>
-		<td align="center" valign=middle sdval="89" sdnum="1033;">89</td>
-		<td align="center" valign=middle sdval="81" sdnum="1033;">81</td>
-		<td align="center" valign=middle sdval="54" sdnum="1033;">54</td>
-		<td align="center" valign=middle sdval="51" sdnum="1033;">51</td>
-		<td align="center" valign=middle sdval="47" sdnum="1033;">47</td>
-		<td align="center" valign=middle sdval="58" sdnum="1033;">58</td>
-		<td align="center" valign=middle sdval="53" sdnum="1033;">53</td>
-		<td align="center" valign=middle sdval="51" sdnum="1033;">51</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="2017" sdnum="1033;">2017</td>
-		<td align="center" valign=middle>ICCV</td>
+		<td height="20" align="left" valign=middle><font face="Liberation Sans">Bŭsta et al. [9]</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">Deep TextSpotter</font></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left" valign=middle><font face="Liberation Sans">Yolo v2</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">CTC</font></td>
+		<td align="left" valign=middle sdval="2017" sdnum="2052;"><font face="Liberation Sans">2017</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">ICCV</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">Yolov2 + RPN, RNN + CTC. It is the first end-to-end trainable detection and recognition system with high speed.</font></td>
 	</tr>
 	<tr>
-		<td height="19" align="center" valign=middle>Li et al. [10]</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle>First end-to-end trainable detection and recognition system</td>
-		<td align="center" valign=middle>Text Proposal Network</td>
-		<td align="center" valign=middle>Attention</td>
-		<td align="center" valign=middle sdval="66.18" sdnum="1033;">66.18</td>
-		<td align="center" valign=middle sdval="84.91" sdnum="1033;">84.91</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="87.7" sdnum="1033;">87.7</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="91.08" sdnum="1033;">91.08</td>
-		<td align="center" valign=middle sdval="89.8" sdnum="1033;">89.8</td>
-		<td align="center" valign=middle sdval="84.6" sdnum="1033;">84.6</td>
-		<td align="center" valign=middle sdval="94.2" sdnum="1033;">94.2</td>
-		<td align="center" valign=middle sdval="92.4" sdnum="1033;">92.4</td>
-		<td align="center" valign=middle sdval="88.2" sdnum="1033;">88.2</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="2017" sdnum="1033;">2017</td>
-		<td align="center" valign=middle>ICCV</td>
+		<td height="20" align="left" valign=middle><font face="Liberation Sans">Li et al. [10]</font></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left" valign=middle><font face="Liberation Sans">Text Proposal Network</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">Attention</font></td>
+		<td align="left" valign=middle sdval="2017" sdnum="2052;"><font face="Liberation Sans">2017</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">ICCV</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">TPN + RNN encoder + attention-based RNN</font></td>
 	</tr>
 	<tr>
-		<td height="19" align="center" valign=middle>Lyu et al. [11]</td>
-		<td align="center" valign=middle>Mask TextSpotter</td>
-		<td align="center" valign=middle>Precise text detection and recognition are acquired via semantic segmentation</td>
-		<td align="center" valign=middle>Fast R-CNN with mask branch</td>
-		<td align="center" valign=middle>Character segmentation</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="92.2" sdnum="1033;">92.2</td>
-		<td align="center" valign=middle sdval="91.1" sdnum="1033;">91.1</td>
-		<td align="center" valign=middle sdval="86.5" sdnum="1033;">86.5</td>
-		<td align="center" valign=middle sdval="92.5" sdnum="1033;">92.5</td>
-		<td align="center" valign=middle sdval="92" sdnum="1033;">92</td>
-		<td align="center" valign=middle sdval="88.2" sdnum="1033;">88.2</td>
-		<td align="center" valign=middle sdval="79.3" sdnum="1033;">79.3</td>
-		<td align="center" valign=middle sdval="73" sdnum="1033;">73</td>
-		<td align="center" valign=middle sdval="62.4" sdnum="1033;">62.4</td>
-		<td align="center" valign=middle sdval="79.3" sdnum="1033;">79.3</td>
-		<td align="center" valign=middle sdval="74.5" sdnum="1033;">74.5</td>
-		<td align="center" valign=middle sdval="64.2" sdnum="1033;">64.2</td>
-		<td align="center" valign=middle sdval="52.9" sdnum="1033;">52.9</td>
-		<td align="center" valign=middle sdval="71.8" sdnum="1033;">71.8</td>
-		<td align="center" valign=middle sdval="2018" sdnum="1033;">2018</td>
-		<td align="center" valign=middle>ECCV</td>
+		<td height="20" align="left" valign=middle><font face="Liberation Sans">Lyu et al. [11]</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">Mask TextSpotter</font></td>
+		<td align="left" sdnum="2052;0;@">✓</td>
+		<td align="left" valign=middle><font face="Liberation Sans">Fast R-CNN with mask branch</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">Character segmentation</font></td>
+		<td align="left" valign=middle sdval="2018" sdnum="2052;"><font face="Liberation Sans">2018</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">ECCV</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">Precise text detection and recognition are acquired via semantic segmentation</font></td>
 	</tr>
 	<tr>
-		<td height="19" align="center" valign=middle>He et al. [12]</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle>Character attention mechanism: use character spatial information as explicit supervision</td>
-		<td align="center" valign=middle>Text-Alignment Layer</td>
-		<td align="center" valign=middle>Attention</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="91" sdnum="1033;">91</td>
-		<td align="center" valign=middle sdval="89" sdnum="1033;">89</td>
-		<td align="center" valign=middle sdval="86" sdnum="1033;">86</td>
-		<td align="center" valign=middle sdval="93" sdnum="1033;">93</td>
-		<td align="center" valign=middle sdval="92" sdnum="1033;">92</td>
-		<td align="center" valign=middle sdval="87" sdnum="1033;">87</td>
-		<td align="center" valign=middle sdval="82" sdnum="1033;">82</td>
-		<td align="center" valign=middle sdval="77" sdnum="1033;">77</td>
-		<td align="center" valign=middle sdval="63" sdnum="1033;">63</td>
-		<td align="center" valign=middle sdval="85" sdnum="1033;">85</td>
-		<td align="center" valign=middle sdval="80" sdnum="1033;">80</td>
-		<td align="center" valign=middle sdval="65" sdnum="1033;">65</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="2018" sdnum="1033;">2018</td>
-		<td align="center" valign=middle>CVPR</td>
+		<td height="20" align="left" valign=middle><font face="Liberation Sans">He et al. [12]</font></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" sdnum="2052;0;@">✓</td>
+		<td align="left" valign=middle><font face="Liberation Sans">Text-Alignment Layer</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">Attention</font></td>
+		<td align="left" valign=middle sdval="2018" sdnum="2052;"><font face="Liberation Sans">2018</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">CVPR</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">Character attention mechanism: use character spatial information as explicit supervision</font></td>
 	</tr>
 	<tr>
-		<td height="19" align="center" valign=middle>Liu et al. [13]</td>
-		<td align="center" valign=middle>FOTS</td>
-		<td align="center" valign=middle>Little computation overhead compared to baseline text detection network (22.6fps)</td>
-		<td align="center" valign=middle>EAST with RoIRotate</td>
-		<td align="center" valign=middle>CTC</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="91.99" sdnum="1033;">91.99</td>
-		<td align="center" valign=middle sdval="90.11" sdnum="1033;">90.11</td>
-		<td align="center" valign=middle sdval="84.77" sdnum="1033;">84.77</td>
-		<td align="center" valign=middle sdval="95.94" sdnum="1033;">95.94</td>
-		<td align="center" valign=middle sdval="93.9" sdnum="1033;">93.9</td>
-		<td align="center" valign=middle sdval="87.76" sdnum="1033;">87.76</td>
-		<td align="center" valign=middle sdval="83.55" sdnum="1033;">83.55</td>
-		<td align="center" valign=middle sdval="79.11" sdnum="1033;">79.11</td>
-		<td align="center" valign=middle sdval="65.33" sdnum="1033;">65.33</td>
-		<td align="center" valign=middle sdval="87.01" sdnum="1033;">87.01</td>
-		<td align="center" valign=middle sdval="82.39" sdnum="1033;">82.39</td>
-		<td align="center" valign=middle sdval="67.97" sdnum="1033;">67.97</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="2018" sdnum="1033;">2018</td>
-		<td align="center" valign=middle>CVPR</td>
+		<td height="20" align="left" valign=middle><font face="Liberation Sans">Liu et al. [13]</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">FOTS</font></td>
+		<td align="left" sdnum="2052;0;@">✓</td>
+		<td align="left" valign=middle><font face="Liberation Sans">EAST with RoIRotate</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">CTC</font></td>
+		<td align="left" valign=middle sdval="2018" sdnum="2052;"><font face="Liberation Sans">2018</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">CVPR</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">Little computation overhead compared to baseline text detection network (22.6fps)</font></td>
 	</tr>
 	<tr>
-		<td height="19" align="center" valign=middle>Liao et al. [14]</td>
-		<td align="center" valign=middle>TextBoxes++</td>
-		<td align="center" valign=middle>Journal version of TextBoxes (oriented scene text support)</td>
-		<td align="center" valign=middle>SSD-based framework</td>
-		<td align="center" valign=middle>CRNN</td>
-		<td align="center" valign=middle sdval="64" sdnum="1033;">64</td>
-		<td align="center" valign=middle sdval="84" sdnum="1033;">84</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="93" sdnum="1033;">93</td>
-		<td align="center" valign=middle sdval="92" sdnum="1033;">92</td>
-		<td align="center" valign=middle sdval="85" sdnum="1033;">85</td>
-		<td align="center" valign=middle sdval="96" sdnum="1033;">96</td>
-		<td align="center" valign=middle sdval="95" sdnum="1033;">95</td>
-		<td align="center" valign=middle sdval="87" sdnum="1033;">87</td>
-		<td align="center" valign=middle sdval="73.3" sdnum="1033;">73.3</td>
-		<td align="center" valign=middle sdval="65.9" sdnum="1033;">65.9</td>
-		<td align="center" valign=middle sdval="51.9" sdnum="1033;">51.9</td>
-		<td align="center" valign=middle sdval="76.5" sdnum="1033;">76.5</td>
-		<td align="center" valign=middle sdval="69" sdnum="1033;">69</td>
-		<td align="center" valign=middle sdval="54.4" sdnum="1033;">54.4</td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="2018" sdnum="1033;">2018</td>
-		<td align="center" valign=middle>TIP</td>
+		<td height="20" align="left" valign=middle><font face="Liberation Sans">Liao et al. [14]</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">TextBoxes++</font></td>
+		<td align="left" sdnum="2052;0;@">✓</td>
+		<td align="left" valign=middle><font face="Liberation Sans">SSD-based framework</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">CRNN</font></td>
+		<td align="left" valign=middle sdval="2018" sdnum="2052;"><font face="Liberation Sans">2018</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">TIP</font></td>
+		<td align="left" valign=middle><font face="Liberation Sans">Journal version of TextBoxes (multi-oriented scene text support)</font></td>
 	</tr>
-	<tr>
 </table>
 
-## Reference
+<a id="22-end2end-result"></a>
+### 2.2 End-to-end scene text detection and recognition results
 
-[1] Wang K, Babenko B, Belongie S. End-to-end scene text recognition[C]//2011 International Conference on Computer Vision. IEEE, 2011: 1457-1464. [paper](http://www.iapr-tc11.org/dataset/SVT/wang_iccv2011.pdf)
+<body>
+<table cellspacing="0" border="0">
+	<colgroup width="193"></colgroup>
+	<colgroup width="169"></colgroup>
+	<colgroup span="20" width="85"></colgroup>
+	<tr>
+		<td rowspan=3 height="59" align="center" valign=middle><b><font face="Liberation Sans">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Method&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
+		<td rowspan=3 align="center" valign=middle><b><font face="Liberation Sans">Model</font></b></td>
+		<td rowspan=3 align="center" valign=middle><b><font face="Liberation Sans">SVT[15]</font></b></td>
+		<td rowspan=3 align="center" valign=middle><b><font face="Liberation Sans">SVT-50[15]</font></b></td>
+		<td colspan=3 rowspan=2 align="center" valign=middle><b><font face="Liberation Sans">IC03[16]</font></b></td>
+		<td rowspan=3 align="center" valign=middle><b><font face="Liberation Sans">IC11[17]</font></b></td>
+		<td colspan=6 align="center" valign=middle><b><font face="Liberation Sans">IC13[18]</font></b></td>
+		<td colspan=6 align="center" valign=middle><b><font face="Liberation Sans">IC15[19]</font></b></td>
+		<td colspan=2 align="center" valign=middle><b><font face="Liberation Sans">Total-text[20]</font></b></td>
+		</tr>
+	<tr>
+		<td colspan=3 align="center" valign=middle><b><font face="Liberation Sans">End-to-end</font></b></td>
+		<td colspan=3 align="center" valign=middle><b><font face="Liberation Sans">Spotting</font></b></td>
+		<td colspan=3 align="center" valign=middle><b><font face="Liberation Sans">End-to-end</font></b></td>
+		<td colspan=3 align="center" valign=middle><b><font face="Liberation Sans">Spotting</font></b></td>
+		<td rowspan=2 align="center" valign=middle><b><font face="Liberation Sans">None</font></b></td>
+		<td rowspan=2 align="center" valign=middle><b><font face="Liberation Sans">Full</font></b></td>
+	</tr>
+	<tr>
+		<td align="center" valign=middle sdval="50" sdnum="2052;"><b><font face="Liberation Sans">50</font></b></td>
+		<td align="center" valign=middle><b><font face="Liberation Sans">Full</font></b></td>
+		<td align="center" valign=middle><b><font face="Liberation Sans">None</font></b></td>
+		<td align="center" valign=middle><b><font face="Liberation Sans">S</font></b></td>
+		<td align="center" valign=middle><b><font face="Liberation Sans">W </font></b></td>
+		<td align="center" valign=middle><b><font face="Liberation Sans">G</font></b></td>
+		<td align="center" valign=middle><b><font face="Liberation Sans">S</font></b></td>
+		<td align="center" valign=middle><b><font face="Liberation Sans">W </font></b></td>
+		<td align="center" valign=middle><b><font face="Liberation Sans">G</font></b></td>
+		<td align="center" valign=middle><b><font face="Liberation Sans">S</font></b></td>
+		<td align="center" valign=middle><b><font face="Liberation Sans">W </font></b></td>
+		<td align="center" valign=middle><b><font face="Liberation Sans">G</font></b></td>
+		<td align="center" valign=middle><b><font face="Liberation Sans">S</font></b></td>
+		<td align="center" valign=middle><b><font face="Liberation Sans">W </font></b></td>
+		<td align="center" valign=middle><b><font face="Liberation Sans">G</font></b></td>
+		</tr>
+	<tr>
+		<td height="20" align="center" valign=middle><font face="Liberation Sans">Wang et al. [1]</font></td>
+		<td align="center" valign=middle><br></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle sdval="51" sdnum="2052;"><font face="Liberation Sans">51</font></td>
+		<td align="center" valign=middle><br></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle><font face="Liberation Sans">Wang et al. [2]</font></td>
+		<td align="center" valign=middle><br></td>
+		<td align="center" valign=middle sdval="46" sdnum="2052;"><font face="Liberation Sans">46</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle sdval="72" sdnum="2052;"><font face="Liberation Sans">72</font></td>
+		<td align="center" valign=middle sdval="67" sdnum="2052;"><font face="Liberation Sans">67</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle><font face="Liberation Sans">Jaderberg et al. [3]</font></td>
+		<td align="center" valign=middle><br></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle sdval="56" sdnum="2052;"><font face="Liberation Sans">56</font></td>
+		<td align="center" valign=middle sdval="80" sdnum="2052;"><font face="Liberation Sans">80</font></td>
+		<td align="center" valign=middle sdval="75" sdnum="2052;"><font face="Liberation Sans">75</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle><font face="Liberation Sans">Alsharif et al. [4]</font></td>
+		<td align="center" valign=middle><br></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle sdval="48" sdnum="2052;"><font face="Liberation Sans">48</font></td>
+		<td align="center" valign=middle sdval="77" sdnum="2052;"><font face="Liberation Sans">77</font></td>
+		<td align="center" valign=middle sdval="70" sdnum="2052;"><font face="Liberation Sans">70</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle><font face="Liberation Sans">Yao et al. [5]</font></td>
+		<td align="center" valign=middle><br></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle><br></td>
+		<td align="center" valign=middle sdval="48.6" sdnum="2052;"><font face="Liberation Sans">48.6</font></td>
+		<td align="center" valign=middle><br></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle><font face="Liberation Sans">Neumann et al. [6]</font></td>
+		<td align="center" valign=middle><br></td>
+		<td align="center" valign=middle><br></td>
+		<td align="center" valign=middle sdval="68.1" sdnum="2052;"><font face="Liberation Sans">68.1</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle sdval="45.2" sdnum="2052;"><font face="Liberation Sans">45.2</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle sdval="35" sdnum="2052;"><font face="Liberation Sans">35</font></td>
+		<td align="center" valign=middle sdval="19.9" sdnum="2052;"><font face="Liberation Sans">19.9</font></td>
+		<td align="center" valign=middle sdval="15.6" sdnum="2052;"><font face="Liberation Sans">15.6</font></td>
+		<td align="center" valign=middle sdval="35" sdnum="2052;"><font face="Liberation Sans">35</font></td>
+		<td align="center" valign=middle sdval="19.9" sdnum="2052;"><font face="Liberation Sans">19.9</font></td>
+		<td align="center" valign=middle sdval="15.6" sdnum="2052;"><font face="Liberation Sans">15.6</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle><font face="Liberation Sans">Jaderberg et al. [7]</font></td>
+		<td align="center" valign=middle><br></td>
+		<td align="center" valign=middle sdval="53" sdnum="2052;"><font face="Liberation Sans">53</font></td>
+		<td align="center" valign=middle sdval="76" sdnum="2052;"><font face="Liberation Sans">76</font></td>
+		<td align="center" valign=middle sdval="90" sdnum="2052;"><font face="Liberation Sans">90</font></td>
+		<td align="center" valign=middle sdval="86" sdnum="2052;"><font face="Liberation Sans">86</font></td>
+		<td align="center" valign=middle sdval="78" sdnum="2052;"><font face="Liberation Sans">78</font></td>
+		<td align="center" valign=middle sdval="76" sdnum="2052;"><font face="Liberation Sans">76</font></td>
+		<td align="center" valign=middle sdval="76" sdnum="2052;"><font face="Liberation Sans">76</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle><font face="Liberation Sans">Liao et al. [8]</font></td>
+		<td align="center" valign=middle><font face="Liberation Sans">TextBoxes</font></td>
+		<td align="center" valign=middle sdval="64" sdnum="2052;"><font face="Liberation Sans">64</font></td>
+		<td align="center" valign=middle sdval="84" sdnum="2052;"><font face="Liberation Sans">84</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle sdval="87" sdnum="2052;"><font face="Liberation Sans">87</font></td>
+		<td align="center" valign=middle sdval="91" sdnum="2052;"><font face="Liberation Sans">91</font></td>
+		<td align="center" valign=middle sdval="89" sdnum="2052;"><font face="Liberation Sans">89</font></td>
+		<td align="center" valign=middle sdval="84" sdnum="2052;"><font face="Liberation Sans">84</font></td>
+		<td align="center" valign=middle sdval="94" sdnum="2052;"><font face="Liberation Sans">94</font></td>
+		<td align="center" valign=middle sdval="92" sdnum="2052;"><font face="Liberation Sans">92</font></td>
+		<td align="center" valign=middle sdval="87" sdnum="2052;"><font face="Liberation Sans">87</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle sdval="36.3" sdnum="2052;"><font face="Liberation Sans">36.3</font></td>
+		<td align="center" valign=middle sdval="48.9" sdnum="2052;"><font face="Liberation Sans">48.9</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle><font face="Liberation Sans">Bŭsta et al. [9]</font></td>
+		<td align="center" valign=middle><font face="Liberation Sans">Deep TextSpotter</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle sdval="89" sdnum="2052;"><font face="Liberation Sans">89</font></td>
+		<td align="center" valign=middle sdval="86" sdnum="2052;"><font face="Liberation Sans">86</font></td>
+		<td align="center" valign=middle sdval="77" sdnum="2052;"><font face="Liberation Sans">77</font></td>
+		<td align="center" valign=middle sdval="92" sdnum="2052;"><font face="Liberation Sans">92</font></td>
+		<td align="center" valign=middle sdval="89" sdnum="2052;"><font face="Liberation Sans">89</font></td>
+		<td align="center" valign=middle sdval="81" sdnum="2052;"><font face="Liberation Sans">81</font></td>
+		<td align="center" valign=middle sdval="54" sdnum="2052;"><font face="Liberation Sans">54</font></td>
+		<td align="center" valign=middle sdval="51" sdnum="2052;"><font face="Liberation Sans">51</font></td>
+		<td align="center" valign=middle sdval="47" sdnum="2052;"><font face="Liberation Sans">47</font></td>
+		<td align="center" valign=middle sdval="58" sdnum="2052;"><font face="Liberation Sans">58</font></td>
+		<td align="center" valign=middle sdval="53" sdnum="2052;"><font face="Liberation Sans">53</font></td>
+		<td align="center" valign=middle sdval="51" sdnum="2052;"><font face="Liberation Sans">51</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle><font face="Liberation Sans">Li et al. [10]</font></td>
+		<td align="center" valign=middle><br></td>
+		<td align="center" valign=middle sdval="66.18" sdnum="2052;"><font face="Liberation Sans">66.18</font></td>
+		<td align="center" valign=middle sdval="84.91" sdnum="2052;"><font face="Liberation Sans">84.91</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle sdval="87.7" sdnum="2052;"><font face="Liberation Sans">87.7</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle sdval="91.08" sdnum="2052;"><font face="Liberation Sans">91.08</font></td>
+		<td align="center" valign=middle sdval="89.8" sdnum="2052;"><font face="Liberation Sans">89.8</font></td>
+		<td align="center" valign=middle sdval="84.6" sdnum="2052;"><font face="Liberation Sans">84.6</font></td>
+		<td align="center" valign=middle sdval="94.2" sdnum="2052;"><font face="Liberation Sans">94.2</font></td>
+		<td align="center" valign=middle sdval="92.4" sdnum="2052;"><font face="Liberation Sans">92.4</font></td>
+		<td align="center" valign=middle sdval="88.2" sdnum="2052;"><font face="Liberation Sans">88.2</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle><font face="Liberation Sans">Lyu et al. [11]</font></td>
+		<td align="center" valign=middle><font face="Liberation Sans">Mask TextSpotter</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle sdval="92.2" sdnum="2052;"><font face="Liberation Sans">92.2</font></td>
+		<td align="center" valign=middle sdval="91.1" sdnum="2052;"><font face="Liberation Sans">91.1</font></td>
+		<td align="center" valign=middle sdval="86.5" sdnum="2052;"><font face="Liberation Sans">86.5</font></td>
+		<td align="center" valign=middle sdval="92.5" sdnum="2052;"><font face="Liberation Sans">92.5</font></td>
+		<td align="center" valign=middle sdval="92" sdnum="2052;"><font face="Liberation Sans">92</font></td>
+		<td align="center" valign=middle sdval="88.2" sdnum="2052;"><font face="Liberation Sans">88.2</font></td>
+		<td align="center" valign=middle sdval="79.3" sdnum="2052;"><font face="Liberation Sans">79.3</font></td>
+		<td align="center" valign=middle sdval="73" sdnum="2052;"><font face="Liberation Sans">73</font></td>
+		<td align="center" valign=middle sdval="62.4" sdnum="2052;"><font face="Liberation Sans">62.4</font></td>
+		<td align="center" valign=middle sdval="79.3" sdnum="2052;"><font face="Liberation Sans">79.3</font></td>
+		<td align="center" valign=middle sdval="74.5" sdnum="2052;"><font face="Liberation Sans">74.5</font></td>
+		<td align="center" valign=middle sdval="64.2" sdnum="2052;"><font face="Liberation Sans">64.2</font></td>
+		<td align="center" valign=middle sdval="52.9" sdnum="2052;"><font face="Liberation Sans">52.9</font></td>
+		<td align="center" valign=middle sdval="71.8" sdnum="2052;"><font face="Liberation Sans">71.8</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle><font face="Liberation Sans">He et al. [12]</font></td>
+		<td align="center" valign=middle><br></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle sdval="91" sdnum="2052;"><font face="Liberation Sans">91</font></td>
+		<td align="center" valign=middle sdval="89" sdnum="2052;"><font face="Liberation Sans">89</font></td>
+		<td align="center" valign=middle sdval="86" sdnum="2052;"><font face="Liberation Sans">86</font></td>
+		<td align="center" valign=middle sdval="93" sdnum="2052;"><font face="Liberation Sans">93</font></td>
+		<td align="center" valign=middle sdval="92" sdnum="2052;"><font face="Liberation Sans">92</font></td>
+		<td align="center" valign=middle sdval="87" sdnum="2052;"><font face="Liberation Sans">87</font></td>
+		<td align="center" valign=middle sdval="82" sdnum="2052;"><font face="Liberation Sans">82</font></td>
+		<td align="center" valign=middle sdval="77" sdnum="2052;"><font face="Liberation Sans">77</font></td>
+		<td align="center" valign=middle sdval="63" sdnum="2052;"><font face="Liberation Sans">63</font></td>
+		<td align="center" valign=middle sdval="85" sdnum="2052;"><font face="Liberation Sans">85</font></td>
+		<td align="center" valign=middle sdval="80" sdnum="2052;"><font face="Liberation Sans">80</font></td>
+		<td align="center" valign=middle sdval="65" sdnum="2052;"><font face="Liberation Sans">65</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle><font face="Liberation Sans">Liu et al. [13]</font></td>
+		<td align="center" valign=middle><font face="Liberation Sans">FOTS</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle sdval="91.99" sdnum="2052;"><font face="Liberation Sans">91.99</font></td>
+		<td align="center" valign=middle sdval="90.11" sdnum="2052;"><font face="Liberation Sans">90.11</font></td>
+		<td align="center" valign=middle sdval="84.77" sdnum="2052;"><font face="Liberation Sans">84.77</font></td>
+		<td align="center" valign=middle sdval="95.94" sdnum="2052;"><font face="Liberation Sans">95.94</font></td>
+		<td align="center" valign=middle sdval="93.9" sdnum="2052;"><font face="Liberation Sans">93.9</font></td>
+		<td align="center" valign=middle sdval="87.76" sdnum="2052;"><font face="Liberation Sans">87.76</font></td>
+		<td align="center" valign=middle sdval="83.55" sdnum="2052;"><font face="Liberation Sans">83.55</font></td>
+		<td align="center" valign=middle sdval="79.11" sdnum="2052;"><font face="Liberation Sans">79.11</font></td>
+		<td align="center" valign=middle sdval="65.33" sdnum="2052;"><font face="Liberation Sans">65.33</font></td>
+		<td align="center" valign=middle sdval="87.01" sdnum="2052;"><font face="Liberation Sans">87.01</font></td>
+		<td align="center" valign=middle sdval="82.39" sdnum="2052;"><font face="Liberation Sans">82.39</font></td>
+		<td align="center" valign=middle sdval="67.97" sdnum="2052;"><font face="Liberation Sans">67.97</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle><font face="Liberation Sans">Liao et al. [14]</font></td>
+		<td align="center" valign=middle><font face="Liberation Sans">TextBoxes++</font></td>
+		<td align="center" valign=middle sdval="64" sdnum="2052;"><font face="Liberation Sans">64</font></td>
+		<td align="center" valign=middle sdval="84" sdnum="2052;"><font face="Liberation Sans">84</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle sdval="93" sdnum="2052;"><font face="Liberation Sans">93</font></td>
+		<td align="center" valign=middle sdval="92" sdnum="2052;"><font face="Liberation Sans">92</font></td>
+		<td align="center" valign=middle sdval="85" sdnum="2052;"><font face="Liberation Sans">85</font></td>
+		<td align="center" valign=middle sdval="96" sdnum="2052;"><font face="Liberation Sans">96</font></td>
+		<td align="center" valign=middle sdval="95" sdnum="2052;"><font face="Liberation Sans">95</font></td>
+		<td align="center" valign=middle sdval="87" sdnum="2052;"><font face="Liberation Sans">87</font></td>
+		<td align="center" valign=middle sdval="73.3" sdnum="2052;"><font face="Liberation Sans">73.3</font></td>
+		<td align="center" valign=middle sdval="65.9" sdnum="2052;"><font face="Liberation Sans">65.9</font></td>
+		<td align="center" valign=middle sdval="51.9" sdnum="2052;"><font face="Liberation Sans">51.9</font></td>
+		<td align="center" valign=middle sdval="76.5" sdnum="2052;"><font face="Liberation Sans">76.5</font></td>
+		<td align="center" valign=middle sdval="69" sdnum="2052;"><font face="Liberation Sans">69</font></td>
+		<td align="center" valign=middle sdval="54.4" sdnum="2052;"><font face="Liberation Sans">54.4</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+	</tr>
+</table>
 
-[2] Wang T, Wu D J, Coates A, et al. End-to-end text recognition with convolutional neural networks[C]//Proceedings of the 21st International Conference on Pattern Recognition (ICPR2012). IEEE, 2012: 3304-3308. [paper](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.664.6212&rep=rep1&type=pdf)
+<a id="3-field-survey"></a>
+## 3. Survey
 
-[3] Jaderberg M, Vedaldi A, Zisserman A. Deep features for text spotting[C]//European conference on computer vision. Springer, Cham, 2014: 512-528. [paper](http://www.robots.ox.ac.uk/~vedaldi/assets/pubs/jaderberg14deep.pdf)
+**[A] \[TPAMI-2015]** Ye Q, Doermann D. **Text detection and recognition in imagery: A survey**[J]. IEEE transactions on pattern analysis and machine intelligence, 2015, 37(7): 1480-1500. [paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6945320)
 
-[4] Alsharif O, Pineau J. End-to-End Text Recognition with Hybrid HMM Maxout Models[C]//2014  ICLR. [paper](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.740.1108&rep=rep1&type=pdf)
+**[B] \[Frontiers-Comput. Sci-2016]** Zhu Y, Yao C, Bai X. **Scene text detection and recognition: Recent advances and future trends**[J]. Frontiers of Computer Science, 2016, 10(1): 19-36. [paper](https://link.springer.com/article/10.1007/s11704-015-4488-0)
 
-[5] Yao C, Bai X, Liu W. A unified framework for multioriented text detection and recognition[J]. IEEE Transactions on Image Processing, 2014, 23(11): 4737-4749. [paper](http://www.vlrlab.net/admin/uploads/avatars/A_Unified_Framework_for_Multi-Oriented_Text_Detection_and_Recognition.pdf)
+**[C] \[arXiv-2018]** Long S, He X, Ya C. **Scene Text Detection and Recognition: The Deep Learning Era**[J]. arXiv preprint arXiv:1811.04256, 2018. [paper](https://arxiv.org/pdf/1811.04256.pdf)
 
-[6] Neumann L, Matas J. Real-time lexicon-free scene text localization and recognition[J]. IEEE transactions on pattern analysis and machine intelligence, 2015, 38(9): 1872-1885. [paper](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.717.4947&rep=rep1&type=pdf)
+<a id="4-ocr-service"></a>
+## 4. OCR Service
 
-[7] Jaderberg M, Simonyan K, Vedaldi A, et al. Reading text in the wild with convolutional neural networks[J]. International Journal of Computer Vision, 2016, 116(1): 1-20. [paper](http://www.academia.edu/download/43938680/jaderberg16.pdf)
+|                             OCR                              | API  | Free |
+| :----------------------------------------------------------: | :--: | :--: |
+| [Tesseract OCR Engine](https://github.com/tesseract-ocr/tesseract) |  ×   |  √   |
+| [Azure](https://azure.microsoft.com/zh-cn/services/cognitive-services/computer-vision/#Analysis) |  √   |  √   |
+| [ABBYY](https://www.abbyy.cn/real-time-recognition-sdk/technical-specifications/) |  √   |  √   |
+|               [OCR Space](https://ocr.space/)                |  √   |  √   |
+|       [SODA PDF OCR](https://www.sodapdf.com/ocr-pdf/)       |  √   |  √   |
+|          [Free Online OCR](https://www.newocr.com/)          |  √   |  √   |
+|           [Online OCR](https://www.onlineocr.net/)           |  √   |  √   |
+|             [Super Tools](https://www.wdku.net/)             |  √   |  √   |
+|          [Online Chinese Recognition](http://chongdata.com/ocr/)           |  √   |  √   |
+|   [Calamari OCR](https://github.com/Calamari-OCR/calamari)   |  ×   |  √   |
+|   [Tencent OCR](https://cloud.tencent.com/product/ocr?lang=cn)   |  √   |  ×   |
 
-[8] Liao M, Shi B, Bai X, et al. Textboxes: A fast text detector with a single deep neural network[C]//Thirty-First AAAI Conference on Artificial Intelligence. 2017. [paper](https://www.aaai.org/ocs/index.php/AAAI/AAAI17/paper/viewPDFInterstitial/14202/14295) [code](https://github.com/MhLiao/TextBoxes)
 
-[9] Busta M, Neumann L, Matas J. Deep textspotter: An end-to-end trainable scene text localization and recognition framework[C]//Proceedings of the IEEE International Conference on Computer Vision. 2017: 2204-2212. [paper](http://openaccess.thecvf.com/content_ICCV_2017/papers/Busta_Deep_TextSpotter_An_ICCV_2017_paper.pdf)
-  
-[10] Li H, Wang P,  Shen C. Towards end-to-end text spotting with convolutional recurrent neural networks[C]//Proceedings of the IEEE International Conference on Computer Vision. 2017: 5238-5246. [paper](http://openaccess.thecvf.com/content_ICCV_2017/papers/Li_Towards_End-To-End_Text_ICCV_2017_paper.pdf)
-  
-[11] Lyu P, Liao M, Yao C, et al. Mask textspotter: An end-to-end trainable neural network for spotting text with arbitrary shapes[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 67-83. [paper](http://openaccess.thecvf.com/content_ECCV_2018/papers/Pengyuan_Lyu_Mask_TextSpotter_An_ECCV_2018_paper.pdf) [code](https://github.com/lvpengyuan/masktextspotter.caffe2)
+<a id="5-references"></a>
+## 5. Reference and codes
 
-[12] He T, Tian Z, Huang W, et al. An end-to-end textspotter with explicit alignment and attention[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 5020-5029. [paper](http://openaccess.thecvf.com/content_cvpr_2018/papers/He_An_End-to-End_TextSpotter_CVPR_2018_paper.pdf) [code](https://github.com/tonghe90/textspotter)
+- [1] Wang K, Babenko B, Belongie S. **End-to-end scene text recognition**[C].2011 International Conference on Computer Vision. IEEE, 2011: 1457-1464. [paper](http://www.iapr-tc11.org/dataset/SVT/wang_iccv2011.pdf)
 
-[13] Liu X, Liang D, Yan S, et al. FOTS: Fast oriented text spotting with a unified network[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2018: 5676-5685. [paper](http://openaccess.thecvf.com/content_cvpr_2018/papers/Liu_FOTS_Fast_Oriented_CVPR_2018_paper.pdf) [code](https://github.com/jiangxiluning/FOTS.PyTorch)
+- [2] Wang T, Wu D J, Coates A, et al. **End-to-end text recognition with convolutional neural networks**[C]. Proceedings of the 21st International Conference on Pattern Recognition (ICPR2012). IEEE, 2012: 3304-3308. [paper](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.664.6212&rep=rep1&type=pdf)
 
-[14] Liao M, Shi B, Bai X. Textboxes++: A single-shot oriented scene text detector[J]. IEEE transactions on image processing, 2018, 27(8): 3676-3690. [paper](https://ieeexplore.ieee.org/abstract/document/8334248) [code](https://github.com/MhLiao/TextBoxes_plusplus)
+- [3] Jaderberg M, Vedaldi A, Zisserman A. **Deep features for text spotting**[C]. European conference on computer vision. Springer, Cham, 2014: 512-528. [paper](http://www.robots.ox.ac.uk/~vedaldi/assets/pubs/jaderberg14deep.pdf)
+
+- [4] Alsharif O, Pineau J. **End-to-End Text Recognition with Hybrid HMM Maxout Models**[C]. In ICLR 2014. [paper](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.740.1108&rep=rep1&type=pdf)
+
+- [5] Yao C, Bai X, Liu W. **A unified framework for multioriented text detection and recognition**[J]. IEEE Transactions on Image Processing, 2014, 23(11): 4737-4749. [paper](http://www.vlrlab.net/admin/uploads/avatars/A_Unified_Framework_for_Multi-Oriented_Text_Detection_and_Recognition.pdf)
+
+- [6] Neumann L, Matas J. **Real-time lexicon-free scene text localization and recognition**[J]. IEEE transactions on pattern analysis and machine intelligence, 2015, 38(9): 1872-1885. [paper](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.717.4947&rep=rep1&type=pdf)
+
+- [7] Jaderberg M, Simonyan K, Vedaldi A, et al. **Reading text in the wild with convolutional neural networks**[J]. International Journal of Computer Vision, 2016, 116(1): 1-20. [paper](http://www.academia.edu/download/43938680/jaderberg16.pdf)
+
+- [8] Liao M, Shi B, Bai X, et al. **Textboxes: A fast text detector with a single deep neural network**[C]. In AAAI 2017. [paper](https://www.aaai.org/ocs/index.php/AAAI/AAAI17/paper/viewPDFInterstitial/14202/14295) [code](https://github.com/MhLiao/TextBoxes)
+
+- [9] Busta M, Neumann L, Matas J. **Deep textspotter: An end-to-end trainable scene text localization and recognition framework**[C]. Proceedings of the IEEE International Conference on Computer Vision. 2017: 2204-2212. [paper](http://openaccess.thecvf.com/content_ICCV_2017/papers/Busta_Deep_TextSpotter_An_ICCV_2017_paper.pdf)
+
+- [10] Li H, Wang P,  Shen C. **Towards end-to-end text spotting with convolutional recurrent neural networks**[C]. Proceedings of the IEEE International Conference on Computer Vision. 2017: 5238-5246. [paper](http://openaccess.thecvf.com/content_ICCV_2017/papers/Li_Towards_End-To-End_Text_ICCV_2017_paper.pdf)
+
+- [11] Lyu P, Liao M, Yao C, et al. **Mask textspotter: An end-to-end trainable neural network for spotting text with arbitrary shapes**[C]. Proceedings of the European Conference on Computer Vision (ECCV). 2018: 67-83. [paper](http://openaccess.thecvf.com/content_ECCV_2018/papers/Pengyuan_Lyu_Mask_TextSpotter_An_ECCV_2018_paper.pdf) [code](https://github.com/lvpengyuan/masktextspotter.caffe2)
+
+- [12] He T, Tian Z, Huang W, et al. **An end-to-end textspotter with explicit alignment and attention**[C]. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 5020-5029. [paper](http://openaccess.thecvf.com/content_cvpr_2018/papers/He_An_End-to-End_TextSpotter_CVPR_2018_paper.pdf) [code](https://github.com/tonghe90/textspotter)
+
+- [13] Liu X, Liang D, Yan S, et al. **FOTS: Fast oriented text spotting with a unified network**[C]. Proceedings of the IEEE conference on computer vision and pattern recognition. 2018: 5676-5685. [paper](http://openaccess.thecvf.com/content_cvpr_2018/papers/Liu_FOTS_Fast_Oriented_CVPR_2018_paper.pdf) [code](https://github.com/jiangxiluning/FOTS.PyTorch)
+
+- [14] Liao M, Shi B, Bai X. **Textboxes++: A single-shot oriented scene text detector**[J]. IEEE transactions on image processing, 2018, 27(8): 3676-3690. [paper](https://ieeexplore.ieee.org/abstract/document/8334248) [code](https://github.com/MhLiao/TextBoxes_plusplus)
+
+- [15] Wang,Kai, and S. Belongie. **Word Spotting in the Wild**. European Conference on Computer Vision(ECCV), 2010: 591-604.  [Paper](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.168.4897&rep=rep1&type=pdf)
+
+- [16] S. M. Lucas, A. Panaretos, L. Sosa, A. Tang, S. Wong, R. Young,K. Ashida, H. Nagai, M. Okamoto, H. Yamamoto, H. Miyao,J. Zhu, W. Ou, C. Wolf, J. Jolion, L. Todoran, M. Worring, and X. Lin. **ICDAR 2003 robust reading competitions:entries, results,and future directions**. IJDAR, 7(2-3):105–122, 2005. [paper](https://link.springer.com/content/pdf/10.1007%2Fs10032-004-0134-3.pdf)
+
+- [17] Shahab, A, Shafait, F, Dengel, A: **ICDAR 2011 robust reading competition challenge 2: Reading text in scene images**. In: ICDAR, 2011. [Paper](https://ieeexplore.ieee.org/document/6065556)
+
+- [18] D. Karatzas, F. Shafait, S. Uchida, et al. **ICDAR 2013 robust reading competition**. In ICDAR, 2013. [Paper](https://ieeexplore.ieee.org/document/6628859)
+
+- [19] D. Karatzas, L. Gomez-Bigorda, A. Nicolaou, S. K. Ghosh, A. D.Bagdanov, M. Iwamura, J. Matas, L. Neumann, V. R. Chandrasekhar, S. Lu, F. Shafait, S. Uchida, and E. Valveny. **ICDAR 2015 competition on robust reading**. In ICDAR, pages 1156–1160, 2015. [Paper](https://ieeexplore.ieee.org/document/7333942)
+
+- [20] Chee C K, Chan C S. **Total-text: A comprehensive dataset for scene text detection and recognition**.Document Analysis and Recognition (ICDAR), 2017 14th IAPR International Conference on. IEEE, 2017, 1: 935-942.[Paper](https://arxiv.org/abs/1710.10400)
