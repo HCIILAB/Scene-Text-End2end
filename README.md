@@ -236,18 +236,18 @@
 	<colgroup width="131"></colgroup>
 	<colgroup width="85"></colgroup>
 	<colgroup width="252"></colgroup>
-	<colgroup width="250"></colgroup>
+	<colgroup width="340"></colgroup>
 	<colgroup span="2" width="85"></colgroup>
 	<colgroup width="646"></colgroup>
 	<tr>
-		<td height="20" align="left"><b><font face="Arial">Method&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
-		<td align="left"><b><font face="Arial">Model&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
+		<td height="20" align="left"><b><font face="Arial">Method</font></b></td>
+		<td align="left"><b><font face="Arial">Model</font></b></td>
 		<td align="left"><b><font face="Arial">Code</font></b></td>
-		<td align="left"><b><font face="Arial">Detection&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
-		<td align="left"><b><font face="Arial">Recognition&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
+		<td align="left"><b><font face="Arial">Detection</font></b></td>
+		<td align="left"><b><font face="Arial">Recognition</font></b></td>
 		<td align="left"><b><font face="Arial">Source </font></b></td>
 		<td align="left"><b><font face="Arial">Time</font></b></td>
-		<td align="left"><b><font face="Arial">Highlight&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
+		<td align="left"><b><font face="Arial">Highlight</font></b></td>
 	</tr>
 	<tr>
 		<td height="20" align="left" valign=middle><font face="Arial">Wang et al. [1]</font></td>
@@ -389,6 +389,16 @@
 		<td align="left" valign=middle sdval="2018" sdnum="2052;"><font face="Arial">2018</font></td>
 		<td align="left" valign=middle><font face="Arial">Journal version of TextBoxes (multi-oriented scene text support)</font></td>
 	</tr>
+	<tr>
+		<td height="20" align="left">Liao et al. [15]</td>
+		<td align="left">Mask TextSpotter</td>
+		<td align="left" sdnum="2052;0;@">✓</td>
+		<td align="left">Mask RCNN</td>
+		<td align="left"><font face="Arial">Character segmentation + Spatial Attention Module</font></td>
+		<td align="left">TPAMI</td>
+		<td align="left" sdval="2019" sdnum="2052;">2019</td>
+		<td align="left">Journal version of Mask TextSpotter(proposes Spatial Attention Module)</td>
+	</tr>
 </table>
 
 <a id="22-end2end-result"></a>
@@ -399,7 +409,7 @@
 	<colgroup width="169"></colgroup>
 	<colgroup span="22" width="85"></colgroup>
 	<tr>
-		<td rowspan=3 height="59" align="center" valign=middle><b><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Method&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
+		<td rowspan=3 height="59" align="center" valign=middle><b><font face="Arial">Method</font></b></td>
 		<td rowspan=3 align="center" valign=middle><b><font face="Arial">Model</font></b></td>
 		<td rowspan=3 align="center" valign=middle><b><font face="Arial">Source </font></b></td>
 		<td rowspan=3 align="center" valign=middle><b><font face="Arial">Time</font></b></td>
@@ -800,7 +810,34 @@
 		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
 		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
 	</tr>
+	<tr>
+		<td height="20" align="center">Liao et al. [15]</td>
+		<td align="center" valign=middle><font face="Arial">Mask TextSpotter</font></td>
+		<td align="center">TPAMI</td>
+		<td align="center" sdval="2019" sdnum="2052;">2019</td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdval="93.3" sdnum="2052;">93.3</td>
+		<td align="center" sdval="91.3" sdnum="2052;">91.3</td>
+		<td align="center" sdval="88.2" sdnum="2052;">88.2</td>
+		<td align="center" sdval="92.7" sdnum="2052;">92.7</td>
+		<td align="center" sdval="91.7" sdnum="2052;">91.7</td>
+		<td align="center" sdval="87.7" sdnum="2052;">87.7</td>
+		<td align="center" sdval="83" sdnum="2052;">83</td>
+		<td align="center" sdval="77.7" sdnum="2052;">77.7</td>
+		<td align="center" sdval="73.5" sdnum="2052;">73.5</td>
+		<td align="center" sdval="82.4" sdnum="2052;">82.4</td>
+		<td align="center" sdval="78.1" sdnum="2052;">78.1</td>
+		<td align="center" sdval="73.6" sdnum="2052;">73.6</td>
+		<td align="center" sdval="65.3" sdnum="2052;">65.3</td>
+		<td align="center" sdval="77.4" sdnum="2052;">77.4</td>
+	</tr>
 </table>
+
 
 <a id="3-field-survey"></a>
 ## 3. Survey
