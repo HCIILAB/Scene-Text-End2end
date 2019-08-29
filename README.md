@@ -240,163 +240,163 @@
 	<colgroup span="2" width="85"></colgroup>
 	<colgroup width="646"></colgroup>
 	<tr>
-		<td height="20" align="left"><b><font face="Arial">Method</font></b></td>
-		<td align="left"><b><font face="Arial">Model</font></b></td>
-		<td align="left"><b><font face="Arial">Code</font></b></td>
-		<td align="left"><b><font face="Arial">Detection</font></b></td>
-		<td align="left"><b><font face="Arial">Recognition</font></b></td>
-		<td align="left"><b><font face="Arial">Source </font></b></td>
-		<td align="left"><b><font face="Arial">Time</font></b></td>
-		<td align="left"><b><font face="Arial">Highlight</font></b></td>
+		<td height="20" align="center"><b><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Method&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
+		<td align="center"><b><font face="Arial">&nbsp;&nbsp;&nbsp;Model&nbsp;&nbsp;&nbsp;</font></b></td>
+		<td align="center"><b><font face="Arial">Code</font></b></td>
+		<td align="center"><b><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Detection&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
+		<td align="center"><b><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Recognition&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
+		<td align="center"><b><font face="Arial">Source </font></b></td>
+		<td align="center"><b><font face="Arial">Time</font></b></td>
+		<td align="center"><b><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Highlight&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
 	</tr>
 	<tr>
-		<td height="20" align="left" valign=middle><font face="Arial">Wang et al. [1]</font></td>
-		<td align="left" valign=middle><br></td>
-		<td align="left" sdnum="2052;0;@">✕</td>
+		<td height="20" align="center" valign=middle><font face="Arial">Wang et al. [1]</font></td>
+		<td align="center" valign=middle><br></td>
+		<td align="center" sdnum="2052;0;@">✕</td>
 		<td align="left" valign=middle><font face="Arial">Sliding windows and Random Ferns</font></td>
 		<td align="left" valign=middle><font face="Arial">Pictorial Structures</font></td>
-		<td align="left" valign=middle><font face="Arial">ICCV</font></td>
-		<td align="left" valign=middle sdval="2011" sdnum="2052;"><font face="Arial">2011</font></td>
+		<td align="center" valign=middle><font face="Arial">ICCV</font></td>
+		<td align="center" valign=middle sdval="2011" sdnum="2052;"><font face="Arial">2011</font></td>
 		<td align="left" valign=middle><font face="Arial">Word Re-scoring for NMS</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="left" valign=middle><font face="Arial">Wang et al. [2]</font></td>
-		<td align="left" valign=middle><br></td>
-		<td align="left" sdnum="2052;0;@">✕</td>
+		<td height="20" align="center" valign=middle><font face="Arial">Wang et al. [2]</font></td>
+		<td align="center" valign=middle><br></td>
+		<td align="center" sdnum="2052;0;@">✕</td>
 		<td align="left" valign=middle><font face="Arial">CNN-based</font></td>
 		<td align="left" valign=middle><font face="Arial">Sliding windows for classification</font></td>
-		<td align="left" valign=middle><font face="Arial">ICPR</font></td>
-		<td align="left" valign=middle sdval="2012" sdnum="2052;"><font face="Arial">2012</font></td>
+		<td align="center" valign=middle><font face="Arial">ICPR</font></td>
+		<td align="center" valign=middle sdval="2012" sdnum="2052;"><font face="Arial">2012</font></td>
 		<td align="left" valign=middle><font face="Arial">CNN architecture</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="left" valign=middle><font face="Arial">Jaderberg et al. [3]</font></td>
-		<td align="left" valign=middle><br></td>
-		<td align="left" sdnum="2052;0;@">✕</td>
+		<td height="20" align="center" valign=middle><font face="Arial">Jaderberg et al. [3]</font></td>
+		<td align="center" valign=middle><br></td>
+		<td align="center" sdnum="2052;0;@">✕</td>
 		<td align="left" valign=middle><font face="Arial">CNN-based and saliency maps</font></td>
 		<td align="left" valign=middle><font face="Arial">CNN classifier</font></td>
-		<td align="left" valign=middle><font face="Arial">ECCV</font></td>
-		<td align="left" valign=middle sdval="2014" sdnum="2052;"><font face="Arial">2014</font></td>
+		<td align="center" valign=middle><font face="Arial">ECCV</font></td>
+		<td align="center" valign=middle sdval="2014" sdnum="2052;"><font face="Arial">2014</font></td>
 		<td align="left" valign=middle><font face="Arial">Data mining and annotation</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="left" valign=middle><font face="Arial">Alsharif et al. [4]</font></td>
-		<td align="left" valign=middle><br></td>
-		<td align="left" sdnum="2052;0;@">✕</td>
+		<td height="20" align="center" valign=middle><font face="Arial">Alsharif et al. [4]</font></td>
+		<td align="center" valign=middle><br></td>
+		<td align="center" sdnum="2052;0;@">✕</td>
 		<td align="left" valign=middle><font face="Arial">CNN and hybrid HMM maxout models</font></td>
 		<td align="left" valign=middle><font face="Arial">Segmentation-based</font></td>
-		<td align="left" valign=middle><font face="Arial">ICLR</font></td>
-		<td align="left" valign=middle sdval="2014" sdnum="2052;"><font face="Arial">2014</font></td>
+		<td align="center" valign=middle><font face="Arial">ICLR</font></td>
+		<td align="center" valign=middle sdval="2014" sdnum="2052;"><font face="Arial">2014</font></td>
 		<td align="left" valign=middle><font face="Arial">Hybrid HMM maxout models</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="left" valign=middle><font face="Arial">Yao et al. [5]</font></td>
-		<td align="left" valign=middle><br></td>
-		<td align="left" sdnum="2052;0;@">✕</td>
+		<td height="20" align="center" valign=middle><font face="Arial">Yao et al. [5]</font></td>
+		<td align="center" valign=middle><br></td>
+		<td align="center" sdnum="2052;0;@">✕</td>
 		<td align="left" valign=middle><font face="Arial">Random Forest</font></td>
 		<td align="left" valign=middle><font face="Arial">Component Linking and Word Partition</font></td>
-		<td align="left" valign=middle><font face="Arial">TIP</font></td>
-		<td align="left" valign=middle sdval="2014" sdnum="2052;"><font face="Arial">2014</font></td>
+		<td align="center" valign=middle><font face="Arial">TIP</font></td>
+		<td align="center" valign=middle sdval="2014" sdnum="2052;"><font face="Arial">2014</font></td>
 		<td align="left" valign=middle><font face="Arial">(1) Detection and recognition features sharing. (2) Oriented-text. (3) A new dictionary search method</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="left" valign=middle><font face="Arial">Neumann et al. [6]</font></td>
-		<td align="left" valign=middle><br></td>
-		<td align="left" sdnum="2052;0;@">✕</td>
+		<td height="20" align="center" valign=middle><font face="Arial">Neumann et al. [6]</font></td>
+		<td align="center" valign=middle><br></td>
+		<td align="center" sdnum="2052;0;@">✕</td>
 		<td align="left" valign=middle><font face="Arial">Extremal Regions</font></td>
 		<td align="left" valign=middle><font face="Arial">Clustering algorithm to group characters</font></td>
-		<td align="left" valign=middle><font face="Arial">TPAMI</font></td>
-		<td align="left" valign=middle sdval="2015" sdnum="2052;"><font face="Arial">2015</font></td>
+		<td align="center" valign=middle><font face="Arial">TPAMI</font></td>
+		<td align="center" valign=middle sdval="2015" sdnum="2052;"><font face="Arial">2015</font></td>
 		<td align="left" valign=middle><font face="Arial">Real-time performance(1.6s/image)</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="left" valign=middle><font face="Arial">Jaderberg et al. [7]</font></td>
-		<td align="left" valign=middle><br></td>
-		<td align="left" sdnum="2052;0;@">✕</td>
+		<td height="20" align="center" valign=middle><font face="Arial">Jaderberg et al. [7]</font></td>
+		<td align="center" valign=middle><br></td>
+		<td align="center" sdnum="2052;0;@">✕</td>
 		<td align="left" valign=middle><font face="Arial">Region proposal mechanism</font></td>
 		<td align="left" valign=middle><font face="Arial">Word-level classification</font></td>
-		<td align="left" valign=middle><font face="Arial">IJCV</font></td>
-		<td align="left" valign=middle sdval="2016" sdnum="2052;"><font face="Arial">2016</font></td>
+		<td align="center" valign=middle><font face="Arial">IJCV</font></td>
+		<td align="center" valign=middle sdval="2016" sdnum="2052;"><font face="Arial">2016</font></td>
 		<td align="left" valign=middle><font face="Arial">Trained only on data produced by a synthetic text generation engine, requiring no human labelled data</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="left" valign=middle><font face="Arial">Liao et al. [8]</font></td>
-		<td align="left" valign=middle><font face="Arial">TextBoxes</font></td>
-		<td align="left" sdnum="2052;0;@">✓</td>
+		<td height="20" align="center" valign=middle><font face="Arial">Liao et al. [8]</font></td>
+		<td align="center" valign=middle><font face="Arial">TextBoxes</font></td>
+		<td align="center" sdnum="2052;0;@">✓</td>
 		<td align="left" valign=middle><font face="Arial">SSD-based framework</font></td>
 		<td align="left" valign=middle><font face="Arial">CRNN</font></td>
-		<td align="left" valign=middle><font face="Arial">AAAI</font></td>
-		<td align="left" valign=middle sdval="2017" sdnum="2052;"><font face="Arial">2017</font></td>
+		<td align="center" valign=middle><font face="Arial">AAAI</font></td>
+		<td align="center" valign=middle sdval="2017" sdnum="2052;"><font face="Arial">2017</font></td>
 		<td align="left" valign=middle><font face="Arial">An end-to-end trainable fast scene text detector</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="left" valign=middle><font face="Arial">Bŭsta et al. [9]</font></td>
-		<td align="left" valign=middle><font face="Arial">Deep TextSpotter</font></td>
-		<td align="left" sdnum="2052;0;@">✕</td>
+		<td height="20" align="center" valign=middle><font face="Arial">Bŭsta et al. [9]</font></td>
+		<td align="center" valign=middle><font face="Arial">Deep TextSpotter</font></td>
+		<td align="center" sdnum="2052;0;@">✕</td>
 		<td align="left" valign=middle><font face="Arial">Yolo v2</font></td>
 		<td align="left" valign=middle><font face="Arial">CTC</font></td>
-		<td align="left" valign=middle><font face="Arial">ICCV</font></td>
-		<td align="left" valign=middle sdval="2017" sdnum="2052;"><font face="Arial">2017</font></td>
+		<td align="center" valign=middle><font face="Arial">ICCV</font></td>
+		<td align="center" valign=middle sdval="2017" sdnum="2052;"><font face="Arial">2017</font></td>
 		<td align="left" valign=middle><font face="Arial">Yolov2 + RPN, RNN + CTC. It is the first end-to-end trainable detection and recognition system with high speed.</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="left" valign=middle><font face="Arial">Li et al. [10]</font></td>
-		<td align="left" valign=middle><br></td>
-		<td align="left" sdnum="2052;0;@">✕</td>
+		<td height="20" align="center" valign=middle><font face="Arial">Li et al. [10]</font></td>
+		<td align="center" valign=middle><br></td>
+		<td align="center" sdnum="2052;0;@">✕</td>
 		<td align="left" valign=middle><font face="Arial">Text Proposal Network</font></td>
 		<td align="left" valign=middle><font face="Arial">Attention</font></td>
-		<td align="left" valign=middle><font face="Arial">ICCV</font></td>
-		<td align="left" valign=middle sdval="2017" sdnum="2052;"><font face="Arial">2017</font></td>
+		<td align="center" valign=middle><font face="Arial">ICCV</font></td>
+		<td align="center" valign=middle sdval="2017" sdnum="2052;"><font face="Arial">2017</font></td>
 		<td align="left" valign=middle><font face="Arial">TPN + RNN encoder + attention-based RNN</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="left" valign=middle><font face="Arial">Lyu et al. [11]</font></td>
-		<td align="left" valign=middle><font face="Arial">Mask TextSpotter</font></td>
-		<td align="left" sdnum="2052;0;@">✓</td>
+		<td height="20" align="center" valign=middle><font face="Arial">Lyu et al. [11]</font></td>
+		<td align="center" valign=middle><font face="Arial">Mask TextSpotter</font></td>
+		<td align="center" sdnum="2052;0;@">✓</td>
 		<td align="left" valign=middle><font face="Arial">Fast R-CNN with mask branch</font></td>
 		<td align="left" valign=middle><font face="Arial">Character segmentation</font></td>
-		<td align="left" valign=middle><font face="Arial">ECCV</font></td>
-		<td align="left" valign=middle sdval="2018" sdnum="2052;"><font face="Arial">2018</font></td>
+		<td align="center" valign=middle><font face="Arial">ECCV</font></td>
+		<td align="center" valign=middle sdval="2018" sdnum="2052;"><font face="Arial">2018</font></td>
 		<td align="left" valign=middle><font face="Arial">Precise text detection and recognition are acquired via semantic segmentation</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="left" valign=middle><font face="Arial">He et al. [12]</font></td>
-		<td align="left" valign=middle><br></td>
-		<td align="left" sdnum="2052;0;@">✓</td>
+		<td height="20" align="center" valign=middle><font face="Arial">He et al. [12]</font></td>
+		<td align="center" valign=middle><br></td>
+		<td align="center" sdnum="2052;0;@">✓</td>
 		<td align="left" valign=middle><font face="Arial">Text-Alignment Layer</font></td>
 		<td align="left" valign=middle><font face="Arial">Attention</font></td>
-		<td align="left" valign=middle><font face="Arial">CVPR</font></td>
-		<td align="left" valign=middle sdval="2018" sdnum="2052;"><font face="Arial">2018</font></td>
+		<td align="center" valign=middle><font face="Arial">CVPR</font></td>
+		<td align="center" valign=middle sdval="2018" sdnum="2052;"><font face="Arial">2018</font></td>
 		<td align="left" valign=middle><font face="Arial">Character attention mechanism: use character spatial information as explicit supervision</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="left" valign=middle><font face="Arial">Liu et al. [13]</font></td>
-		<td align="left" valign=middle><font face="Arial">FOTS</font></td>
-		<td align="left" sdnum="2052;0;@">✓</td>
+		<td height="20" align="center" valign=middle><font face="Arial">Liu et al. [13]</font></td>
+		<td align="center" valign=middle><font face="Arial">FOTS</font></td>
+		<td align="center" sdnum="2052;0;@">✓</td>
 		<td align="left" valign=middle><font face="Arial">EAST with RoIRotate</font></td>
 		<td align="left" valign=middle><font face="Arial">CTC</font></td>
-		<td align="left" valign=middle><font face="Arial">CVPR</font></td>
-		<td align="left" valign=middle sdval="2018" sdnum="2052;"><font face="Arial">2018</font></td>
+		<td align="center" valign=middle><font face="Arial">CVPR</font></td>
+		<td align="center" valign=middle sdval="2018" sdnum="2052;"><font face="Arial">2018</font></td>
 		<td align="left" valign=middle><font face="Arial">Little computation overhead compared to baseline text detection network (22.6fps)</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="left" valign=middle><font face="Arial">Liao et al. [14]</font></td>
-		<td align="left" valign=middle><font face="Arial">TextBoxes++</font></td>
-		<td align="left" sdnum="2052;0;@">✓</td>
+		<td height="20" align="center" valign=middle><font face="Arial">Liao et al. [14]</font></td>
+		<td align="center" valign=middle><font face="Arial">TextBoxes++</font></td>
+		<td align="center" sdnum="2052;0;@">✓</td>
 		<td align="left" valign=middle><font face="Arial">SSD-based framework</font></td>
 		<td align="left" valign=middle><font face="Arial">CRNN</font></td>
-		<td align="left" valign=middle><font face="Arial">TIP</font></td>
-		<td align="left" valign=middle sdval="2018" sdnum="2052;"><font face="Arial">2018</font></td>
+		<td align="center" valign=middle><font face="Arial">TIP</font></td>
+		<td align="center" valign=middle sdval="2018" sdnum="2052;"><font face="Arial">2018</font></td>
 		<td align="left" valign=middle><font face="Arial">Journal version of TextBoxes (multi-oriented scene text support)</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="left">Liao et al. [15]</td>
-		<td align="left">Mask TextSpotter</td>
-		<td align="left" sdnum="2052;0;@">✓</td>
+		<td height="20" align="center">Liao et al. [15]</td>
+		<td align="center">Mask TextSpotter</td>
+		<td align="center" sdnum="2052;0;@">✓</td>
 		<td align="left">Mask RCNN</td>
 		<td align="left"><font face="Arial">Character segmentation + Spatial Attention Module</font></td>
-		<td align="left">TPAMI</td>
-		<td align="left" sdval="2019" sdnum="2052;">2019</td>
+		<td align="center">TPAMI</td>
+		<td align="center" sdval="2019" sdnum="2052;">2019</td>
 		<td align="left">Journal version of Mask TextSpotter(proposes Spatial Attention Module)</td>
 	</tr>
 </table>
@@ -409,7 +409,7 @@
 	<colgroup width="169"></colgroup>
 	<colgroup span="22" width="85"></colgroup>
 	<tr>
-		<td rowspan=3 height="59" align="center" valign=middle><b><font face="Arial">Method</font></b></td>
+		<td rowspan=3 height="59" align="center" valign=middle><b><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Method&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
 		<td rowspan=3 align="center" valign=middle><b><font face="Arial">Model</font></b></td>
 		<td rowspan=3 align="center" valign=middle><b><font face="Arial">Source </font></b></td>
 		<td rowspan=3 align="center" valign=middle><b><font face="Arial">Time</font></b></td>
