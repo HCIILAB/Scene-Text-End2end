@@ -23,27 +23,27 @@
 
 <a id="1-1intro"></a>
 ### 1.1 Introduction
-- SVT [15]：
+- SVT [16]：
   * **Introduction:** There are 100 training images and 250 testing images downloaded from Google Street View of road-side scenes. The labelled text can be very challenging with a wide variety of fonts, orientations, and lighting conditions. A lexicon containing 50 words (SVT-50) is also provided for each image.
   * **Link:** [SVT-download](http://vision.ucsd.edu/~kai/grocr/)
 
-- ICDAR 2003(IC03) [16]：
+- ICDAR 2003(IC03) [17]：
   * **Introduction:** The dataset contains a varied array of photos of the world that contain scene text. There are 251 testing images with 50 word lexicons (IC03-50) and a lexicon of all test groundtruth words (IC03-Full).
   * **Link:** [IC03-download](http://www.iapr-tc11.org/mediawiki/index.php?title=ICDAR_2003_Robust_Reading_Competitions)
 
-- ICDAR 2011(IC11) [17] :
+- ICDAR 2011(IC11) [18] :
   * **Introduction:** The dataset is an extension to the dataset used for the text locating competitions of ICDAR 2003.It includes 485 natural images in total.
   * **Link:** [IC11-download](http://www.cvc.uab.es/icdar2011competition/?com=downloads)   
 
-- ICDAR 2013(IC13) [18]：
+- ICDAR 2013(IC13) [19]：
   * **Introduction:** The dataset consists of 229 training images and 233 testing images. Most text are horizontal. Three speciﬁc lexicons are provided, named as “Strong(S)”, “Weak(W)” and “Generic(G)”. “Strong(S)” lexicon provides 100 words per-image including all words that appear in the image. “Weak(W)” lexicon includes all words that appear in the entire test set. And “Generic(G)” lexicon is a 90k word vocabulary.
   * **Link:** [IC13-download](http://dagdata.cvc.uab.es/icdar2013competition/?ch=2&com=downloads)
 
-- ICDAR 2015(IC15) [19]：
+- ICDAR 2015(IC15) [20]：
   - **Introduction:** The dataset includes 1000 training images and 500 testing images captured by Google glasses. The text in the scene is in arbitrary orientations. Similar to ICDAR 2013, it also provides “Strong(S)”, “Weak(W)” and “Generic(G)” lexicons.
   - **Link:** [IC15-download](http://rrc.cvc.uab.es/?ch=4&com=downloads)
 
-- Total-Text [20]：
+- Total-Text [21]：
   - **Introduction:** Except for the horizontal text and oriented text, Total-Text also consists of a lot of curved text. Total-Text contains 1255 training images and 300 test images. All images are annotated with polygons and transcriptions in word-level. A “Full” lexicon contains all words in test set is provided.
   - **Link:** [Total-Text-download](https://github.com/cs-chan/Total-Text-Dataset)
 
@@ -897,17 +897,19 @@
 
 - [14] Liao M, Shi B, Bai X. **Textboxes++: A single-shot oriented scene text detector**[J]. IEEE transactions on image processing, 2018, 27(8): 3676-3690. [paper](https://ieeexplore.ieee.org/abstract/document/8334248) [code](https://github.com/MhLiao/TextBoxes_plusplus)
 
-- [15] Wang,Kai, and S. Belongie. **Word Spotting in the Wild**. European Conference on Computer Vision(ECCV), 2010: 591-604.  [Paper](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.168.4897&rep=rep1&type=pdf)
+- [15] Minghui Liao, Pengyuan Lyu, Minghang He. **Mask TextSpotter: An End-to-End Trainable Neural Network for Spotting Text with Arbitrary Shapes**[J]. IEEE transactions on pattern analysis and machine intelligence, 2019. [paper](https://arxiv.org/abs/1908.08207) [code](https://github.com/MhLiao/TextBoxes_plusplus)
 
-- [16] S. M. Lucas, A. Panaretos, L. Sosa, A. Tang, S. Wong, R. Young,K. Ashida, H. Nagai, M. Okamoto, H. Yamamoto, H. Miyao,J. Zhu, W. Ou, C. Wolf, J. Jolion, L. Todoran, M. Worring, and X. Lin. **ICDAR 2003 robust reading competitions:entries, results,and future directions**. IJDAR, 7(2-3):105–122, 2005. [paper](https://link.springer.com/content/pdf/10.1007%2Fs10032-004-0134-3.pdf)
+- [16] Wang,Kai, and S. Belongie. **Word Spotting in the Wild**. European Conference on Computer Vision(ECCV), 2010: 591-604.  [Paper](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.168.4897&rep=rep1&type=pdf)
 
-- [17] Shahab, A, Shafait, F, Dengel, A: **ICDAR 2011 robust reading competition challenge 2: Reading text in scene images**. In: ICDAR, 2011. [Paper](https://ieeexplore.ieee.org/document/6065556)
+- [17] S. M. Lucas, A. Panaretos, L. Sosa, A. Tang, S. Wong, R. Young,K. Ashida, H. Nagai, M. Okamoto, H. Yamamoto, H. Miyao,J. Zhu, W. Ou, C. Wolf, J. Jolion, L. Todoran, M. Worring, and X. Lin. **ICDAR 2003 robust reading competitions:entries, results,and future directions**. IJDAR, 7(2-3):105–122, 2005. [paper](https://link.springer.com/content/pdf/10.1007%2Fs10032-004-0134-3.pdf)
 
-- [18] D. Karatzas, F. Shafait, S. Uchida, et al. **ICDAR 2013 robust reading competition**. In ICDAR, 2013. [Paper](https://ieeexplore.ieee.org/document/6628859)
+- [18] Shahab, A, Shafait, F, Dengel, A: **ICDAR 2011 robust reading competition challenge 2: Reading text in scene images**. In: ICDAR, 2011. [Paper](https://ieeexplore.ieee.org/document/6065556)
 
-- [19] D. Karatzas, L. Gomez-Bigorda, A. Nicolaou, S. K. Ghosh, A. D.Bagdanov, M. Iwamura, J. Matas, L. Neumann, V. R. Chandrasekhar, S. Lu, F. Shafait, S. Uchida, and E. Valveny. **ICDAR 2015 competition on robust reading**. In ICDAR, pages 1156–1160, 2015. [Paper](https://ieeexplore.ieee.org/document/7333942)
+- [19] D. Karatzas, F. Shafait, S. Uchida, et al. **ICDAR 2013 robust reading competition**. In ICDAR, 2013. [Paper](https://ieeexplore.ieee.org/document/6628859)
 
-- [20] Chee C K, Chan C S. **Total-text: A comprehensive dataset for scene text detection and recognition**.Document Analysis and Recognition (ICDAR), 2017 14th IAPR International Conference on. IEEE, 2017, 1: 935-942.[Paper](https://arxiv.org/abs/1710.10400)
+- [20] D. Karatzas, L. Gomez-Bigorda, A. Nicolaou, S. K. Ghosh, A. D.Bagdanov, M. Iwamura, J. Matas, L. Neumann, V. R. Chandrasekhar, S. Lu, F. Shafait, S. Uchida, and E. Valveny. **ICDAR 2015 competition on robust reading**. In ICDAR, pages 1156–1160, 2015. [Paper](https://ieeexplore.ieee.org/document/7333942)
+
+- [21] Chee C K, Chan C S. **Total-text: A comprehensive dataset for scene text detection and recognition**.Document Analysis and Recognition (ICDAR), 2017 14th IAPR International Conference on. IEEE, 2017, 1: 935-942.[Paper](https://arxiv.org/abs/1710.10400)
 
 
 If you find any problems in our resources, or any good papers/codes we have missed, please inform us at    **liuchongyu1996@gmail.com**. Thank you for your contribution. 
