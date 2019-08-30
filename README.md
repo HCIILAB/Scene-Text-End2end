@@ -1,4 +1,4 @@
-# End-to-End Scene Text Detection and Recognition System Resources
+# End-to-End Scene Text Detection and Recognition Resources
 
 <p align='right'>Author: Canjie Luo</p>
 
@@ -911,6 +911,8 @@
 
 - [21] Chee C K, Chan C S. **Total-text: A comprehensive dataset for scene text detection and recognition**.Document Analysis and Recognition (ICDAR), 2017 14th IAPR International Conference on. IEEE, 2017, 1: 935-942.[Paper](https://arxiv.org/abs/1710.10400)
 
+
+###
 
 If you find any problems in our resources, or any good papers/codes we have missed, please inform us at    **liuchongyu1996@gmail.com**. Thank you for your contribution. 
 
