@@ -1,6 +1,6 @@
-# End-to-End Scene Text Detection and Recognition Resources
+# End-to-End Scene Text Detection and Recognition System Resources
 
-<p align='right'>Author: Canjie Luo</p>
+<p align='right'>Author: Canjie Luo, Chongyu Liu</p>
 
 <!-- MarkdownTOC -->
 
@@ -23,27 +23,27 @@
 
 <a id="1-1intro"></a>
 ### 1.1 Introduction
-- SVT [16]：
+- SVT [15]：
   * **Introduction:** There are 100 training images and 250 testing images downloaded from Google Street View of road-side scenes. The labelled text can be very challenging with a wide variety of fonts, orientations, and lighting conditions. A lexicon containing 50 words (SVT-50) is also provided for each image.
   * **Link:** [SVT-download](http://vision.ucsd.edu/~kai/grocr/)
 
-- ICDAR 2003(IC03) [17]：
+- ICDAR 2003(IC03) [16]：
   * **Introduction:** The dataset contains a varied array of photos of the world that contain scene text. There are 251 testing images with 50 word lexicons (IC03-50) and a lexicon of all test groundtruth words (IC03-Full).
   * **Link:** [IC03-download](http://www.iapr-tc11.org/mediawiki/index.php?title=ICDAR_2003_Robust_Reading_Competitions)
 
-- ICDAR 2011(IC11) [18] :
+- ICDAR 2011(IC11) [17] :
   * **Introduction:** The dataset is an extension to the dataset used for the text locating competitions of ICDAR 2003.It includes 485 natural images in total.
   * **Link:** [IC11-download](http://www.cvc.uab.es/icdar2011competition/?com=downloads)   
 
-- ICDAR 2013(IC13) [19]：
+- ICDAR 2013(IC13) [18]：
   * **Introduction:** The dataset consists of 229 training images and 233 testing images. Most text are horizontal. Three speciﬁc lexicons are provided, named as “Strong(S)”, “Weak(W)” and “Generic(G)”. “Strong(S)” lexicon provides 100 words per-image including all words that appear in the image. “Weak(W)” lexicon includes all words that appear in the entire test set. And “Generic(G)” lexicon is a 90k word vocabulary.
   * **Link:** [IC13-download](http://dagdata.cvc.uab.es/icdar2013competition/?ch=2&com=downloads)
 
-- ICDAR 2015(IC15) [20]：
+- ICDAR 2015(IC15) [19]：
   - **Introduction:** The dataset includes 1000 training images and 500 testing images captured by Google glasses. The text in the scene is in arbitrary orientations. Similar to ICDAR 2013, it also provides “Strong(S)”, “Weak(W)” and “Generic(G)” lexicons.
   - **Link:** [IC15-download](http://rrc.cvc.uab.es/?ch=4&com=downloads)
 
-- Total-Text [21]：
+- Total-Text [20]：
   - **Introduction:** Except for the horizontal text and oriented text, Total-Text also consists of a lot of curved text. Total-Text contains 1255 training images and 300 test images. All images are annotated with polygons and transcriptions in word-level. A “Full” lexicon contains all words in test set is provided.
   - **Link:** [Total-Text-download](https://github.com/cs-chan/Total-Text-Dataset)
 
@@ -228,6 +228,8 @@
 <a id="2-summary-of-end2end-results"></a>
 ## 2. Summary of End-to-end Scene Text Detection and Recognition Methods
 
+
+
 <a id="21-comparison-of-methods"></a>
 ### 2.1 Comparison of methods
 
@@ -236,170 +238,242 @@
 	<colgroup width="131"></colgroup>
 	<colgroup width="85"></colgroup>
 	<colgroup width="252"></colgroup>
-	<colgroup width="340"></colgroup>
+	<colgroup width="250"></colgroup>
 	<colgroup span="2" width="85"></colgroup>
 	<colgroup width="646"></colgroup>
 	<tr>
-		<td height="20" align="center"><b><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Method&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
-		<td align="center"><b><font face="Arial">&nbsp;&nbsp;&nbsp;Model&nbsp;&nbsp;&nbsp;</font></b></td>
-		<td align="center"><b><font face="Arial">Code</font></b></td>
-		<td align="center"><b><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Detection&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
-		<td align="center"><b><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Recognition&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
-		<td align="center"><b><font face="Arial">Source </font></b></td>
-		<td align="center"><b><font face="Arial">Time</font></b></td>
-		<td align="center"><b><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Highlight&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
+		<td height="20" align="left"><b><font face="Arial">Method&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
+		<td align="left"><b><font face="Arial">Model&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
+		<td align="left"><b><font face="Arial">Code</font></b></td>
+		<td align="left"><b><font face="Arial">Detection&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
+		<td align="left"><b><font face="Arial">Recognition&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
+		<td align="left"><b><font face="Arial">Source </font></b></td>
+		<td align="left"><b><font face="Arial">Time</font></b></td>
+		<td align="left"><b><font face="Arial">Highlight&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Wang et al. [1]</font></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" sdnum="2052;0;@">✕</td>
-		<td align="left" valign=middle><font face="Arial">Sliding windows and Random Ferns</font></td>
-		<td align="left" valign=middle><font face="Arial">Pictorial Structures</font></td>
-		<td align="center" valign=middle><font face="Arial">ICCV</font></td>
-		<td align="center" valign=middle sdval="2011" sdnum="2052;"><font face="Arial">2011</font></td>
-		<td align="left" valign=middle><font face="Arial">Word Re-scoring for NMS</font></td>
+		<td height="20" align="left" valign=middle><font face="Times New Roman">Wang et al. [1]</font></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left" valign=middle><font face="Times New Roman">Sliding windows and Random Ferns</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Pictorial Structures</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">ICCV</font></td>
+		<td align="left" valign=middle sdval="2011" sdnum="2052;"><font face="Times New Roman">2011</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Word Re-scoring for NMS</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Wang et al. [2]</font></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" sdnum="2052;0;@">✕</td>
-		<td align="left" valign=middle><font face="Arial">CNN-based</font></td>
-		<td align="left" valign=middle><font face="Arial">Sliding windows for classification</font></td>
-		<td align="center" valign=middle><font face="Arial">ICPR</font></td>
-		<td align="center" valign=middle sdval="2012" sdnum="2052;"><font face="Arial">2012</font></td>
-		<td align="left" valign=middle><font face="Arial">CNN architecture</font></td>
+		<td height="20" align="left" valign=middle><font face="Times New Roman">Wang et al. [2]</font></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left" valign=middle><font face="Times New Roman">CNN-based</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Sliding windows for classification</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">ICPR</font></td>
+		<td align="left" valign=middle sdval="2012" sdnum="2052;"><font face="Times New Roman">2012</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">CNN architecture</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Jaderberg et al. [3]</font></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" sdnum="2052;0;@">✕</td>
-		<td align="left" valign=middle><font face="Arial">CNN-based and saliency maps</font></td>
-		<td align="left" valign=middle><font face="Arial">CNN classifier</font></td>
-		<td align="center" valign=middle><font face="Arial">ECCV</font></td>
-		<td align="center" valign=middle sdval="2014" sdnum="2052;"><font face="Arial">2014</font></td>
-		<td align="left" valign=middle><font face="Arial">Data mining and annotation</font></td>
+		<td height="20" align="left" valign=middle><font face="Times New Roman">Jaderberg et al. [3]</font></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left" valign=middle><font face="Times New Roman">CNN-based and saliency maps</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">CNN classifier</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">ECCV</font></td>
+		<td align="left" valign=middle sdval="2014" sdnum="2052;"><font face="Times New Roman">2014</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Data mining and annotation</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Alsharif et al. [4]</font></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" sdnum="2052;0;@">✕</td>
-		<td align="left" valign=middle><font face="Arial">CNN and hybrid HMM maxout models</font></td>
-		<td align="left" valign=middle><font face="Arial">Segmentation-based</font></td>
-		<td align="center" valign=middle><font face="Arial">ICLR</font></td>
-		<td align="center" valign=middle sdval="2014" sdnum="2052;"><font face="Arial">2014</font></td>
-		<td align="left" valign=middle><font face="Arial">Hybrid HMM maxout models</font></td>
+		<td height="20" align="left" valign=middle><font face="Times New Roman">Alsharif et al. [4]</font></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left" valign=middle><font face="Times New Roman">CNN and hybrid HMM maxout models</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Segmentation-based</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">ICLR</font></td>
+		<td align="left" valign=middle sdval="2014" sdnum="2052;"><font face="Times New Roman">2014</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Hybrid HMM maxout models</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Yao et al. [5]</font></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" sdnum="2052;0;@">✕</td>
-		<td align="left" valign=middle><font face="Arial">Random Forest</font></td>
-		<td align="left" valign=middle><font face="Arial">Component Linking and Word Partition</font></td>
-		<td align="center" valign=middle><font face="Arial">TIP</font></td>
-		<td align="center" valign=middle sdval="2014" sdnum="2052;"><font face="Arial">2014</font></td>
-		<td align="left" valign=middle><font face="Arial">(1) Detection and recognition features sharing. (2) Oriented-text. (3) A new dictionary search method</font></td>
+		<td height="20" align="left" valign=middle><font face="Times New Roman">Yao et al. [5]</font></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left" valign=middle><font face="Times New Roman">Random Forest</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Component Linking and Word Partition</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">TIP</font></td>
+		<td align="left" valign=middle sdval="2014" sdnum="2052;"><font face="Times New Roman">2014</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">(1) Detection and recognition features sharing. (2) Oriented-text. (3) A new dictionary search method</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Neumann et al. [6]</font></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" sdnum="2052;0;@">✕</td>
-		<td align="left" valign=middle><font face="Arial">Extremal Regions</font></td>
-		<td align="left" valign=middle><font face="Arial">Clustering algorithm to group characters</font></td>
-		<td align="center" valign=middle><font face="Arial">TPAMI</font></td>
-		<td align="center" valign=middle sdval="2015" sdnum="2052;"><font face="Arial">2015</font></td>
-		<td align="left" valign=middle><font face="Arial">Real-time performance(1.6s/image)</font></td>
+		<td height="20" align="left" valign=middle><font face="Times New Roman">Neumann et al. [6]</font></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left" valign=middle><font face="Times New Roman">Extremal Regions</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Clustering algorithm to group characters</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">TPAMI</font></td>
+		<td align="left" valign=middle sdval="2015" sdnum="2052;"><font face="Times New Roman">2015</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Real-time performance(1.6s/image)</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Jaderberg et al. [7]</font></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" sdnum="2052;0;@">✕</td>
-		<td align="left" valign=middle><font face="Arial">Region proposal mechanism</font></td>
-		<td align="left" valign=middle><font face="Arial">Word-level classification</font></td>
-		<td align="center" valign=middle><font face="Arial">IJCV</font></td>
-		<td align="center" valign=middle sdval="2016" sdnum="2052;"><font face="Arial">2016</font></td>
-		<td align="left" valign=middle><font face="Arial">Trained only on data produced by a synthetic text generation engine, requiring no human labelled data</font></td>
+		<td height="20" align="left" valign=middle><font face="Times New Roman">Jaderberg et al. [7]</font></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left" valign=middle><font face="Times New Roman">Region proposal mechanism</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Word-level classification</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">IJCV</font></td>
+		<td align="left" valign=middle sdval="2016" sdnum="2052;"><font face="Times New Roman">2016</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Trained only on data produced by a synthetic text generation engine, requiring no human labelled data</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Liao et al. [8]</font></td>
-		<td align="center" valign=middle><font face="Arial">TextBoxes</font></td>
-		<td align="center" sdnum="2052;0;@">✓</td>
-		<td align="left" valign=middle><font face="Arial">SSD-based framework</font></td>
-		<td align="left" valign=middle><font face="Arial">CRNN</font></td>
-		<td align="center" valign=middle><font face="Arial">AAAI</font></td>
-		<td align="center" valign=middle sdval="2017" sdnum="2052;"><font face="Arial">2017</font></td>
-		<td align="left" valign=middle><font face="Arial">An end-to-end trainable fast scene text detector</font></td>
+		<td height="20" align="left" valign=middle><font face="Times New Roman">Liao et al. [8]</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">TextBoxes</font></td>
+		<td align="left" sdnum="2052;0;@">✓</td>
+		<td align="left" valign=middle><font face="Times New Roman">SSD-based framework</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">CRNN</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">AAAI</font></td>
+		<td align="left" valign=middle sdval="2017" sdnum="2052;"><font face="Times New Roman">2017</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">An end-to-end trainable fast scene text detector</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Bŭsta et al. [9]</font></td>
-		<td align="center" valign=middle><font face="Arial">Deep TextSpotter</font></td>
-		<td align="center" sdnum="2052;0;@">✕</td>
-		<td align="left" valign=middle><font face="Arial">Yolo v2</font></td>
-		<td align="left" valign=middle><font face="Arial">CTC</font></td>
-		<td align="center" valign=middle><font face="Arial">ICCV</font></td>
-		<td align="center" valign=middle sdval="2017" sdnum="2052;"><font face="Arial">2017</font></td>
-		<td align="left" valign=middle><font face="Arial">Yolov2 + RPN, RNN + CTC. It is the first end-to-end trainable detection and recognition system with high speed.</font></td>
+		<td height="20" align="left" valign=middle><font face="Times New Roman">Bŭsta et al. [9]</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Deep TextSpotter</font></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left" valign=middle><font face="Times New Roman">Yolo v2</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">CTC</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">ICCV</font></td>
+		<td align="left" valign=middle sdval="2017" sdnum="2052;"><font face="Times New Roman">2017</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Yolov2 + RPN, RNN + CTC. It is the first end-to-end trainable detection and recognition system with high speed.</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Li et al. [10]</font></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" sdnum="2052;0;@">✕</td>
-		<td align="left" valign=middle><font face="Arial">Text Proposal Network</font></td>
-		<td align="left" valign=middle><font face="Arial">Attention</font></td>
-		<td align="center" valign=middle><font face="Arial">ICCV</font></td>
-		<td align="center" valign=middle sdval="2017" sdnum="2052;"><font face="Arial">2017</font></td>
-		<td align="left" valign=middle><font face="Arial">TPN + RNN encoder + attention-based RNN</font></td>
+		<td height="20" align="left" valign=middle><font face="Times New Roman">Li et al. [10]</font></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left" valign=middle><font face="Times New Roman">Text Proposal Network</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Attention</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">ICCV</font></td>
+		<td align="left" valign=middle sdval="2017" sdnum="2052;"><font face="Times New Roman">2017</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">TPN + RNN encoder + attention-based RNN</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Lyu et al. [11]</font></td>
-		<td align="center" valign=middle><font face="Arial">Mask TextSpotter</font></td>
-		<td align="center" sdnum="2052;0;@">✓</td>
-		<td align="left" valign=middle><font face="Arial">Fast R-CNN with mask branch</font></td>
-		<td align="left" valign=middle><font face="Arial">Character segmentation</font></td>
-		<td align="center" valign=middle><font face="Arial">ECCV</font></td>
-		<td align="center" valign=middle sdval="2018" sdnum="2052;"><font face="Arial">2018</font></td>
-		<td align="left" valign=middle><font face="Arial">Precise text detection and recognition are acquired via semantic segmentation</font></td>
+		<td height="20" align="left" valign=middle><font face="Times New Roman">Sun et al. [22]</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">TextNet </font></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left" valign=middle><font face="Times New Roman">Scale-aware attention backbone and Perspective RoI Transform </font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Attention</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">ACCV</font></td>
+		<td align="left" valign=middle sdval="2018" sdnum="2052;"><font face="Times New Roman">2018</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Perspective RoI Transform for Irregular text recognition</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">He et al. [12]</font></td>
-		<td align="center" valign=middle><br></td>
-		<td align="center" sdnum="2052;0;@">✓</td>
-		<td align="left" valign=middle><font face="Arial">Text-Alignment Layer</font></td>
-		<td align="left" valign=middle><font face="Arial">Attention</font></td>
-		<td align="center" valign=middle><font face="Arial">CVPR</font></td>
-		<td align="center" valign=middle sdval="2018" sdnum="2052;"><font face="Arial">2018</font></td>
-		<td align="left" valign=middle><font face="Arial">Character attention mechanism: use character spatial information as explicit supervision</font></td>
+		<td height="20" align="left" valign=middle><font face="Times New Roman">Lyu et al. [11]</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Mask TextSpotter</font></td>
+		<td align="left" sdnum="2052;0;@">✓</td>
+		<td align="left" valign=middle><font face="Times New Roman">Fast R-CNN with mask branch</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Character segmentation</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">ECCV</font></td>
+		<td align="left" valign=middle sdval="2018" sdnum="2052;"><font face="Times New Roman">2018</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Precise text detection and recognition are acquired via semantic segmentation</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Liu et al. [13]</font></td>
-		<td align="center" valign=middle><font face="Arial">FOTS</font></td>
-		<td align="center" sdnum="2052;0;@">✓</td>
-		<td align="left" valign=middle><font face="Arial">EAST with RoIRotate</font></td>
-		<td align="left" valign=middle><font face="Arial">CTC</font></td>
-		<td align="center" valign=middle><font face="Arial">CVPR</font></td>
-		<td align="center" valign=middle sdval="2018" sdnum="2052;"><font face="Arial">2018</font></td>
-		<td align="left" valign=middle><font face="Arial">Little computation overhead compared to baseline text detection network (22.6fps)</font></td>
+		<td height="20" align="left" valign=middle><font face="Times New Roman">He et al. [12]</font></td>
+		<td align="left" valign=middle><br></td>
+		<td align="left" sdnum="2052;0;@">✓</td>
+		<td align="left" valign=middle><font face="Times New Roman">Text-Alignment Layer</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Attention</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">CVPR</font></td>
+		<td align="left" valign=middle sdval="2018" sdnum="2052;"><font face="Times New Roman">2018</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Character attention mechanism: use character spatial information as explicit supervision</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Liao et al. [14]</font></td>
-		<td align="center" valign=middle><font face="Arial">TextBoxes++</font></td>
-		<td align="center" sdnum="2052;0;@">✓</td>
-		<td align="left" valign=middle><font face="Arial">SSD-based framework</font></td>
-		<td align="left" valign=middle><font face="Arial">CRNN</font></td>
-		<td align="center" valign=middle><font face="Arial">TIP</font></td>
-		<td align="center" valign=middle sdval="2018" sdnum="2052;"><font face="Arial">2018</font></td>
-		<td align="left" valign=middle><font face="Arial">Journal version of TextBoxes (multi-oriented scene text support)</font></td>
+		<td height="20" align="left" valign=middle><font face="Times New Roman">Liu et al. [13]</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">FOTS</font></td>
+		<td align="left" sdnum="2052;0;@">✓</td>
+		<td align="left" valign=middle><font face="Times New Roman">EAST with RoIRotate</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">CTC</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">CVPR</font></td>
+		<td align="left" valign=middle sdval="2018" sdnum="2052;"><font face="Times New Roman">2018</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Little computation overhead compared to baseline text detection network (22.6fps)</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center">Liao et al. [15]</td>
-		<td align="center">Mask TextSpotter</td>
-		<td align="center" sdnum="2052;0;@">✓</td>
-		<td align="left">Mask RCNN</td>
-		<td align="left"><font face="Arial">Character segmentation + Spatial Attention Module</font></td>
-		<td align="center">TPAMI</td>
-		<td align="center" sdval="2019" sdnum="2052;">2019</td>
-		<td align="left">Journal version of Mask TextSpotter(proposes Spatial Attention Module)</td>
+		<td height="20" align="left" valign=middle><font face="Times New Roman">Liao et al. [14]</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">TextBoxes++</font></td>
+		<td align="left" sdnum="2052;0;@">✓</td>
+		<td align="left" valign=middle><font face="Times New Roman">SSD-based framework</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">CRNN</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">TIP</font></td>
+		<td align="left" valign=middle sdval="2018" sdnum="2052;"><font face="Times New Roman">2018</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Journal version of TextBoxes (multi-oriented scene text support)</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left"><font face="Times New Roman">Liao et al. [15]</font></td>
+		<td align="left"><font face="Times New Roman">Mask TextSpotter</font></td>
+		<td align="left" sdnum="2052;0;@">✓</td>
+		<td align="left"><font face="Times New Roman">Mask R-CNN</font></td>
+		<td align="left"><font face="Times New Roman">Character segmentation + Spatial Attention Module</font></td>
+		<td align="left"><font face="Times New Roman">TPAMI</font></td>
+		<td align="left" sdval="2019" sdnum="2052;"><font face="Times New Roman">2019</font></td>
+		<td align="left"><font face="Times New Roman">Journal version of Mask TextSpotter(proposes Spatial Attention Module)</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=middle><font face="Times New Roman">Xing et al. [23]</font></td>
+		<td align="left"><font face="Times New Roman">CharNet</font></td>
+		<td align="left" sdnum="2052;0;@">✓</td>
+		<td align="left"><font face="Times New Roman">A character branch and a detection branch </font></td>
+		<td align="left"><font face="Times New Roman">Character level</font></td>
+		<td align="left"><font face="Times New Roman">ICCV</font></td>
+		<td align="left" sdval="2019" sdnum="2052;"><font face="Times New Roman">2019</font></td>
+		<td align="left"><font face="Times New Roman">Utilizing a character as basic element to overcome the main difficulty of joint optimization of  text detection and RNN-based recognition</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left"><font face="Times New Roman">Feng et al. [24]</font></td>
+		<td align="left"><font face="Times New Roman">TextDragon </font></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left"><font face="Times New Roman">Local box regression, center line segmentation and RoI Sliding</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">CTC</font></td>
+		<td align="left"><font face="Times New Roman">ICCV</font></td>
+		<td align="left" sdval="2019" sdnum="2052;"><font face="Times New Roman">2019</font></td>
+		<td align="left"><font face="Times New Roman">A new differentiable operator named RoISlide connect arbitrary shaped text detection and recognition</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left"><font face="Times New Roman">Qin et al. [25]</font></td>
+		<td align="left"><br></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left"><font face="Times New Roman">Mask R-CNN with RoI masking</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Attention</font></td>
+		<td align="left"><font face="Times New Roman">ICCV</font></td>
+		<td align="left" sdval="2019" sdnum="2052;"><font face="Times New Roman">2019</font></td>
+		<td align="left"><font face="Times New Roman">A simple yet effective RoI masking step to extract useful irregularly shaped text instance features</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left"><font face="Times New Roman">Qiao et al. [26]</font></td>
+		<td align="left"><font face="Times New Roman">Text Perceptron </font></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left"><font face="Times New Roman">Mask R-CNN with Order-aware Semantic Segmentation and Boundary Regressions</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Attention</font></td>
+		<td align="left"><font face="Times New Roman">AAAI</font></td>
+		<td align="left" sdval="2020" sdnum="2052;"><font face="Times New Roman">2020</font></td>
+		<td align="left"><font face="Times New Roman">A novel Shape Transform Module to transform the feature regions into regular morphologies</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left"><font face="Times New Roman">Wang et al. [27]</font></td>
+		<td align="left"><br></td>
+		<td align="left" sdnum="2052;0;@">✕</td>
+		<td align="left"><font face="Times New Roman">Oriented Rectangular Box Detector and Boundary Point Detector</font></td>
+		<td align="left" valign=middle><font face="Times New Roman">Attention</font></td>
+		<td align="left"><font face="Times New Roman">AAAI</font></td>
+		<td align="left" sdval="2020" sdnum="2052;"><font face="Times New Roman">2020</font></td>
+		<td align="left"><font face="Times New Roman">A set of points on the boundary of each text instance represents arbitrary shapes</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left"><font face="Times New Roman">Liu et al. [28]</font></td>
+		<td align="left"><font face="Times New Roman">ABCNet</font></td>
+		<td align="left" sdnum="2052;0;@">✓</td>
+		<td align="left"><font face="Times New Roman">Bezier Curve Detection and BezierAlign</font></td>
+		<td align="left"><font face="Times New Roman">CTC</font></td>
+		<td align="left"><font face="Times New Roman">CVPR</font></td>
+		<td align="left" sdval="2020" sdnum="2052;"><font face="Times New Roman">2020</font></td>
+		<td align="left"><font face="Times New Roman">10 times faster than re-cent state-of-the-art methods with a competitive scene text spotting accuracy</font></td>
 	</tr>
 </table>
+
+
 
 <a id="22-end2end-result"></a>
 ### 2.2 End-to-end scene text detection and recognition results
@@ -409,7 +483,7 @@
 	<colgroup width="169"></colgroup>
 	<colgroup span="22" width="85"></colgroup>
 	<tr>
-		<td rowspan=3 height="59" align="center" valign=middle><b><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Method&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
+		<td rowspan=3 height="59" align="center" valign=middle><b><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Method&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></td>
 		<td rowspan=3 align="center" valign=middle><b><font face="Arial">Model</font></b></td>
 		<td rowspan=3 align="center" valign=middle><b><font face="Arial">Source </font></b></td>
 		<td rowspan=3 align="center" valign=middle><b><font face="Arial">Time</font></b></td>
@@ -422,405 +496,478 @@
 		<td colspan=2 align="center" valign=middle><b><font face="Arial">Total-text</font></b></td>
 		</tr>
 	<tr>
-		<td colspan=3 align="center" valign=middle><b><font face="Arial">End-to-end</font></b></td>
-		<td colspan=3 align="center" valign=middle><b><font face="Arial">Spotting</font></b></td>
-		<td colspan=3 align="center" valign=middle><b><font face="Arial">End-to-end</font></b></td>
-		<td colspan=3 align="center" valign=middle><b><font face="Arial">Spotting</font></b></td>
-		<td rowspan=2 align="center" valign=middle><b><font face="Arial">None</font></b></td>
-		<td rowspan=2 align="center" valign=middle><b><font face="Arial">Full</font></b></td>
-	</tr>
-	<tr>
-		<td align="center" valign=middle sdval="50" sdnum="2052;"><b><font face="Arial">50</font></b></td>
-		<td align="center" valign=middle><b><font face="Arial">Full</font></b></td>
-		<td align="center" valign=middle><b><font face="Arial">None</font></b></td>
-		<td align="center" valign=middle><b><font face="Arial">S</font></b></td>
-		<td align="center" valign=middle><b><font face="Arial">W </font></b></td>
-		<td align="center" valign=middle><b><font face="Arial">G</font></b></td>
-		<td align="center" valign=middle><b><font face="Arial">S</font></b></td>
-		<td align="center" valign=middle><b><font face="Arial">W </font></b></td>
-		<td align="center" valign=middle><b><font face="Arial">G</font></b></td>
-		<td align="center" valign=middle><b><font face="Arial">S</font></b></td>
-		<td align="center" valign=middle><b><font face="Arial">W </font></b></td>
-		<td align="center" valign=middle><b><font face="Arial">G</font></b></td>
-		<td align="center" valign=middle><b><font face="Arial">S</font></b></td>
-		<td align="center" valign=middle><b><font face="Arial">W </font></b></td>
-		<td align="center" valign=middle><b><font face="Arial">G</font></b></td>
+		<td colspan=3 align="center" valign=middle><font face="Times New Roman">End-to-end</font></td>
+		<td colspan=3 align="center" valign=middle><font face="Times New Roman">Spotting</font></td>
+		<td colspan=3 align="center" valign=middle><font face="Times New Roman">End-to-end</font></td>
+		<td colspan=3 align="center" valign=middle><font face="Times New Roman">Spotting</font></td>
+		<td rowspan=2 align="center" valign=middle><font face="Times New Roman">None</font></td>
+		<td rowspan=2 align="center" valign=middle><font face="Times New Roman">Full</font></td>
+		<td rowspan=2 align="center" valign=middle><font face="Times New Roman">None</font></td>
+		<td rowspan=2 align="center" valign=middle><font face="Times New Roman">Full</font></td>
 		</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Wang et al. [1]</font></td>
+		<td align="center" valign=middle sdval="50" sdnum="2052;"><font face="Times New Roman">50</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">Full</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">None</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">S</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">W </font></td>
+		<td align="center" valign=middle><font face="Times New Roman">G</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">S</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">W </font></td>
+		<td align="center" valign=middle><font face="Times New Roman">G</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">S</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">W </font></td>
+		<td align="center" valign=middle><font face="Times New Roman">G</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">S</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">W </font></td>
+		<td align="center" valign=middle><font face="Times New Roman">G</font></td>
+		</tr>
+	<tr>
+		<td height="20" align="center" valign=middle><font face="Times New Roman">Wang et al. [1]</font></td>
 		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><font face="Arial">ICCV</font></td>
-		<td align="center" valign=middle sdval="2011" sdnum="2052;"><font face="Arial">2011</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" valign=middle sdval="51" sdnum="2052;"><font face="Arial">51</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">ICCV</font></td>
+		<td align="center" valign=middle sdval="2011" sdnum="2052;"><font face="Times New Roman">2011</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" valign=middle sdval="51" sdnum="2052;"><font face="Times New Roman">51</font></td>
 		<td align="center" valign=middle><br></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Wang et al. [2]</font></td>
+		<td height="20" align="center" valign=middle><font face="Times New Roman">Wang et al. [2]</font></td>
 		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><font face="Arial">ICPR</font></td>
-		<td align="center" valign=middle sdval="2012" sdnum="2052;"><font face="Arial">2012</font></td>
-		<td align="center" valign=middle sdval="46" sdnum="2052;"><font face="Arial">46</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" valign=middle sdval="72" sdnum="2052;"><font face="Arial">72</font></td>
-		<td align="center" valign=middle sdval="67" sdnum="2052;"><font face="Arial">67</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">ICPR</font></td>
+		<td align="center" valign=middle sdval="2012" sdnum="2052;"><font face="Times New Roman">2012</font></td>
+		<td align="center" valign=middle sdval="46" sdnum="2052;"><font face="Times New Roman">46</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" valign=middle sdval="72" sdnum="2052;"><font face="Times New Roman">72</font></td>
+		<td align="center" valign=middle sdval="67" sdnum="2052;"><font face="Times New Roman">67</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Jaderberg et al. [3]</font></td>
+		<td height="20" align="center" valign=middle><font face="Times New Roman">Jaderberg et al. [3]</font></td>
 		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><font face="Arial">ECCV</font></td>
-		<td align="center" valign=middle sdval="2014" sdnum="2052;"><font face="Arial">2014</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" valign=middle sdval="56" sdnum="2052;"><font face="Arial">56</font></td>
-		<td align="center" valign=middle sdval="80" sdnum="2052;"><font face="Arial">80</font></td>
-		<td align="center" valign=middle sdval="75" sdnum="2052;"><font face="Arial">75</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">ECCV</font></td>
+		<td align="center" valign=middle sdval="2014" sdnum="2052;"><font face="Times New Roman">2014</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" valign=middle sdval="56" sdnum="2052;"><font face="Times New Roman">56</font></td>
+		<td align="center" valign=middle sdval="80" sdnum="2052;"><font face="Times New Roman">80</font></td>
+		<td align="center" valign=middle sdval="75" sdnum="2052;"><font face="Times New Roman">75</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Alsharif et al. [4]</font></td>
+		<td height="20" align="center" valign=middle><font face="Times New Roman">Alsharif et al. [4]</font></td>
 		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><font face="Arial">ICLR</font></td>
-		<td align="center" valign=middle sdval="2014" sdnum="2052;"><font face="Arial">2014</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" valign=middle sdval="48" sdnum="2052;"><font face="Arial">48</font></td>
-		<td align="center" valign=middle sdval="77" sdnum="2052;"><font face="Arial">77</font></td>
-		<td align="center" valign=middle sdval="70" sdnum="2052;"><font face="Arial">70</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">ICLR</font></td>
+		<td align="center" valign=middle sdval="2014" sdnum="2052;"><font face="Times New Roman">2014</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" valign=middle sdval="48" sdnum="2052;"><font face="Times New Roman">48</font></td>
+		<td align="center" valign=middle sdval="77" sdnum="2052;"><font face="Times New Roman">77</font></td>
+		<td align="center" valign=middle sdval="70" sdnum="2052;"><font face="Times New Roman">70</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Yao et al. [5]</font></td>
+		<td height="20" align="center" valign=middle><font face="Times New Roman">Yao et al. [5]</font></td>
 		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><font face="Arial">TIP</font></td>
-		<td align="center" valign=middle sdval="2014" sdnum="2052;"><font face="Arial">2014</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">TIP</font></td>
+		<td align="center" valign=middle sdval="2014" sdnum="2052;"><font face="Times New Roman">2014</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
 		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="48.6" sdnum="2052;"><font face="Arial">48.6</font></td>
+		<td align="center" valign=middle sdval="48.6" sdnum="2052;"><font face="Times New Roman">48.6</font></td>
 		<td align="center" valign=middle><br></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Neumann et al. [6]</font></td>
+		<td height="20" align="center" valign=middle><font face="Times New Roman">Neumann et al. [6]</font></td>
 		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><font face="Arial">TPAMI</font></td>
-		<td align="center" valign=middle sdval="2015" sdnum="2052;"><font face="Arial">2015</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">TPAMI</font></td>
+		<td align="center" valign=middle sdval="2015" sdnum="2052;"><font face="Times New Roman">2015</font></td>
 		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle sdval="68.1" sdnum="2052;"><font face="Arial">68.1</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" valign=middle sdval="45.2" sdnum="2052;"><font face="Arial">45.2</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" valign=middle sdval="35" sdnum="2052;"><font face="Arial">35</font></td>
-		<td align="center" valign=middle sdval="19.9" sdnum="2052;"><font face="Arial">19.9</font></td>
-		<td align="center" valign=middle sdval="15.6" sdnum="2052;"><font face="Arial">15.6</font></td>
-		<td align="center" valign=middle sdval="35" sdnum="2052;"><font face="Arial">35</font></td>
-		<td align="center" valign=middle sdval="19.9" sdnum="2052;"><font face="Arial">19.9</font></td>
-		<td align="center" valign=middle sdval="15.6" sdnum="2052;"><font face="Arial">15.6</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle sdval="68.1" sdnum="2052;"><font face="Times New Roman">68.1</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" valign=middle sdval="45.2" sdnum="2052;"><font face="Times New Roman">45.2</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" valign=middle sdval="35" sdnum="2052;"><font face="Times New Roman">35</font></td>
+		<td align="center" valign=middle sdval="19.9" sdnum="2052;"><font face="Times New Roman">19.9</font></td>
+		<td align="center" valign=middle sdval="15.6" sdnum="2052;"><font face="Times New Roman">15.6</font></td>
+		<td align="center" valign=middle sdval="35" sdnum="2052;"><font face="Times New Roman">35</font></td>
+		<td align="center" valign=middle sdval="19.9" sdnum="2052;"><font face="Times New Roman">19.9</font></td>
+		<td align="center" valign=middle sdval="15.6" sdnum="2052;"><font face="Times New Roman">15.6</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Jaderberg et al. [7]</font></td>
+		<td height="20" align="center" valign=middle><font face="Times New Roman">Jaderberg et al. [7]</font></td>
 		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><font face="Arial">IJCV</font></td>
-		<td align="center" valign=middle sdval="2016" sdnum="2052;"><font face="Arial">2016</font></td>
-		<td align="center" valign=middle sdval="53" sdnum="2052;"><font face="Arial">53</font></td>
-		<td align="center" valign=middle sdval="76" sdnum="2052;"><font face="Arial">76</font></td>
-		<td align="center" valign=middle sdval="90" sdnum="2052;"><font face="Arial">90</font></td>
-		<td align="center" valign=middle sdval="86" sdnum="2052;"><font face="Arial">86</font></td>
-		<td align="center" valign=middle sdval="78" sdnum="2052;"><font face="Arial">78</font></td>
-		<td align="center" valign=middle sdval="76" sdnum="2052;"><font face="Arial">76</font></td>
-		<td align="center" valign=middle sdval="76" sdnum="2052;"><font face="Arial">76</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">IJCV</font></td>
+		<td align="center" valign=middle sdval="2016" sdnum="2052;"><font face="Times New Roman">2016</font></td>
+		<td align="center" valign=middle sdval="53" sdnum="2052;"><font face="Times New Roman">53</font></td>
+		<td align="center" valign=middle sdval="76" sdnum="2052;"><font face="Times New Roman">76</font></td>
+		<td align="center" valign=middle sdval="90" sdnum="2052;"><font face="Times New Roman">90</font></td>
+		<td align="center" valign=middle sdval="86" sdnum="2052;"><font face="Times New Roman">86</font></td>
+		<td align="center" valign=middle sdval="78" sdnum="2052;"><font face="Times New Roman">78</font></td>
+		<td align="center" valign=middle sdval="76" sdnum="2052;"><font face="Times New Roman">76</font></td>
+		<td align="center" valign=middle sdval="76" sdnum="2052;"><font face="Times New Roman">76</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Liao et al. [8]</font></td>
-		<td align="center" valign=middle><font face="Arial">TextBoxes</font></td>
-		<td align="center" valign=middle><font face="Arial">AAAI</font></td>
-		<td align="center" valign=middle sdval="2017" sdnum="2052;"><font face="Arial">2017</font></td>
-		<td align="center" valign=middle sdval="64" sdnum="2052;"><font face="Arial">64</font></td>
-		<td align="center" valign=middle sdval="84" sdnum="2052;"><font face="Arial">84</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" valign=middle sdval="87" sdnum="2052;"><font face="Arial">87</font></td>
-		<td align="center" valign=middle sdval="91" sdnum="2052;"><font face="Arial">91</font></td>
-		<td align="center" valign=middle sdval="89" sdnum="2052;"><font face="Arial">89</font></td>
-		<td align="center" valign=middle sdval="84" sdnum="2052;"><font face="Arial">84</font></td>
-		<td align="center" valign=middle sdval="94" sdnum="2052;"><font face="Arial">94</font></td>
-		<td align="center" valign=middle sdval="92" sdnum="2052;"><font face="Arial">92</font></td>
-		<td align="center" valign=middle sdval="87" sdnum="2052;"><font face="Arial">87</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" valign=middle sdval="36.3" sdnum="2052;"><font face="Arial">36.3</font></td>
-		<td align="center" valign=middle sdval="48.9" sdnum="2052;"><font face="Arial">48.9</font></td>
+		<td height="20" align="center" valign=middle><font face="Times New Roman">Liao et al. [8]</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">TextBoxes</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">AAAI</font></td>
+		<td align="center" valign=middle sdval="2017" sdnum="2052;"><font face="Times New Roman">2017</font></td>
+		<td align="center" valign=middle sdval="64" sdnum="2052;"><font face="Times New Roman">64</font></td>
+		<td align="center" valign=middle sdval="84" sdnum="2052;"><font face="Times New Roman">84</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" valign=middle sdval="87" sdnum="2052;"><font face="Times New Roman">87</font></td>
+		<td align="center" valign=middle sdval="91" sdnum="2052;"><font face="Times New Roman">91</font></td>
+		<td align="center" valign=middle sdval="89" sdnum="2052;"><font face="Times New Roman">89</font></td>
+		<td align="center" valign=middle sdval="84" sdnum="2052;"><font face="Times New Roman">84</font></td>
+		<td align="center" valign=middle sdval="94" sdnum="2052;"><font face="Times New Roman">94</font></td>
+		<td align="center" valign=middle sdval="92" sdnum="2052;"><font face="Times New Roman">92</font></td>
+		<td align="center" valign=middle sdval="87" sdnum="2052;"><font face="Times New Roman">87</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" valign=middle sdval="36.3" sdnum="2052;"><font face="Times New Roman">36.3</font></td>
+		<td align="center" valign=middle sdval="48.9" sdnum="2052;"><font face="Times New Roman">48.9</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Bŭsta et al. [9]</font></td>
-		<td align="center" valign=middle><font face="Arial">Deep TextSpotter</font></td>
-		<td align="center" valign=middle><font face="Arial">ICCV</font></td>
-		<td align="center" valign=middle sdval="2017" sdnum="2052;"><font face="Arial">2017</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" valign=middle sdval="89" sdnum="2052;"><font face="Arial">89</font></td>
-		<td align="center" valign=middle sdval="86" sdnum="2052;"><font face="Arial">86</font></td>
-		<td align="center" valign=middle sdval="77" sdnum="2052;"><font face="Arial">77</font></td>
-		<td align="center" valign=middle sdval="92" sdnum="2052;"><font face="Arial">92</font></td>
-		<td align="center" valign=middle sdval="89" sdnum="2052;"><font face="Arial">89</font></td>
-		<td align="center" valign=middle sdval="81" sdnum="2052;"><font face="Arial">81</font></td>
-		<td align="center" valign=middle sdval="54" sdnum="2052;"><font face="Arial">54</font></td>
-		<td align="center" valign=middle sdval="51" sdnum="2052;"><font face="Arial">51</font></td>
-		<td align="center" valign=middle sdval="47" sdnum="2052;"><font face="Arial">47</font></td>
-		<td align="center" valign=middle sdval="58" sdnum="2052;"><font face="Arial">58</font></td>
-		<td align="center" valign=middle sdval="53" sdnum="2052;"><font face="Arial">53</font></td>
-		<td align="center" valign=middle sdval="51" sdnum="2052;"><font face="Arial">51</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td height="20" align="center" valign=middle><font face="Times New Roman">Bŭsta et al. [9]</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">Deep TextSpotter</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">ICCV</font></td>
+		<td align="center" valign=middle sdval="2017" sdnum="2052;"><font face="Times New Roman">2017</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" valign=middle sdval="89" sdnum="2052;"><font face="Times New Roman">89</font></td>
+		<td align="center" valign=middle sdval="86" sdnum="2052;"><font face="Times New Roman">86</font></td>
+		<td align="center" valign=middle sdval="77" sdnum="2052;"><font face="Times New Roman">77</font></td>
+		<td align="center" valign=middle sdval="92" sdnum="2052;"><font face="Times New Roman">92</font></td>
+		<td align="center" valign=middle sdval="89" sdnum="2052;"><font face="Times New Roman">89</font></td>
+		<td align="center" valign=middle sdval="81" sdnum="2052;"><font face="Times New Roman">81</font></td>
+		<td align="center" valign=middle sdval="54" sdnum="2052;"><font face="Times New Roman">54</font></td>
+		<td align="center" valign=middle sdval="51" sdnum="2052;"><font face="Times New Roman">51</font></td>
+		<td align="center" valign=middle sdval="47" sdnum="2052;"><font face="Times New Roman">47</font></td>
+		<td align="center" valign=middle sdval="58" sdnum="2052;"><font face="Times New Roman">58</font></td>
+		<td align="center" valign=middle sdval="53" sdnum="2052;"><font face="Times New Roman">53</font></td>
+		<td align="center" valign=middle sdval="51" sdnum="2052;"><font face="Times New Roman">51</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">21.85</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Li et al. [10]</font></td>
+		<td height="20" align="center" valign=middle><font face="Times New Roman">Li et al. [10]</font></td>
 		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><font face="Arial">ICCV</font></td>
-		<td align="center" valign=middle sdval="2017" sdnum="2052;"><font face="Arial">2017</font></td>
-		<td align="center" valign=middle sdval="66.18" sdnum="2052;"><font face="Arial">66.18</font></td>
-		<td align="center" valign=middle sdval="84.91" sdnum="2052;"><font face="Arial">84.91</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" valign=middle sdval="87.7" sdnum="2052;"><font face="Arial">87.7</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" valign=middle sdval="91.08" sdnum="2052;"><font face="Arial">91.08</font></td>
-		<td align="center" valign=middle sdval="89.8" sdnum="2052;"><font face="Arial">89.8</font></td>
-		<td align="center" valign=middle sdval="84.6" sdnum="2052;"><font face="Arial">84.6</font></td>
-		<td align="center" valign=middle sdval="94.2" sdnum="2052;"><font face="Arial">94.2</font></td>
-		<td align="center" valign=middle sdval="92.4" sdnum="2052;"><font face="Arial">92.4</font></td>
-		<td align="center" valign=middle sdval="88.2" sdnum="2052;"><font face="Arial">88.2</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">ICCV</font></td>
+		<td align="center" valign=middle sdval="2017" sdnum="2052;"><font face="Times New Roman">2017</font></td>
+		<td align="center" valign=middle sdval="66.18" sdnum="2052;"><font face="Times New Roman">66.18</font></td>
+		<td align="center" valign=middle sdval="84.91" sdnum="2052;"><font face="Times New Roman">84.91</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" valign=middle sdval="87.7" sdnum="2052;"><font face="Times New Roman">87.7</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" valign=middle sdval="91.08" sdnum="2052;"><font face="Times New Roman">91.08</font></td>
+		<td align="center" valign=middle sdval="89.8" sdnum="2052;"><font face="Times New Roman">89.8</font></td>
+		<td align="center" valign=middle sdval="84.6" sdnum="2052;"><font face="Times New Roman">84.6</font></td>
+		<td align="center" valign=middle sdval="94.2" sdnum="2052;"><font face="Times New Roman">94.2</font></td>
+		<td align="center" valign=middle sdval="92.4" sdnum="2052;"><font face="Times New Roman">92.4</font></td>
+		<td align="center" valign=middle sdval="88.2" sdnum="2052;"><font face="Times New Roman">88.2</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Lyu et al. [11]</font></td>
-		<td align="center" valign=middle><font face="Arial">Mask TextSpotter</font></td>
-		<td align="center" valign=middle><font face="Arial">ECCV</font></td>
-		<td align="center" valign=middle sdval="2018" sdnum="2052;"><font face="Arial">2018</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" valign=middle sdval="92.2" sdnum="2052;"><font face="Arial">92.2</font></td>
-		<td align="center" valign=middle sdval="91.1" sdnum="2052;"><font face="Arial">91.1</font></td>
-		<td align="center" valign=middle sdval="86.5" sdnum="2052;"><font face="Arial">86.5</font></td>
-		<td align="center" valign=middle sdval="92.5" sdnum="2052;"><font face="Arial">92.5</font></td>
-		<td align="center" valign=middle sdval="92" sdnum="2052;"><font face="Arial">92</font></td>
-		<td align="center" valign=middle sdval="88.2" sdnum="2052;"><font face="Arial">88.2</font></td>
-		<td align="center" valign=middle sdval="79.3" sdnum="2052;"><font face="Arial">79.3</font></td>
-		<td align="center" valign=middle sdval="73" sdnum="2052;"><font face="Arial">73</font></td>
-		<td align="center" valign=middle sdval="62.4" sdnum="2052;"><font face="Arial">62.4</font></td>
-		<td align="center" valign=middle sdval="79.3" sdnum="2052;"><font face="Arial">79.3</font></td>
-		<td align="center" valign=middle sdval="74.5" sdnum="2052;"><font face="Arial">74.5</font></td>
-		<td align="center" valign=middle sdval="64.2" sdnum="2052;"><font face="Arial">64.2</font></td>
-		<td align="center" valign=middle sdval="52.9" sdnum="2052;"><font face="Arial">52.9</font></td>
-		<td align="center" valign=middle sdval="71.8" sdnum="2052;"><font face="Arial">71.8</font></td>
+		<td height="20" align="center" valign=middle><font face="Times New Roman">Sun et al. [22]</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">TextNet </font></td>
+		<td align="center" valign=middle><font face="Times New Roman">ACCV</font></td>
+		<td align="center" valign=middle sdval="2018" sdnum="2052;"><font face="Times New Roman">2018</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">89.77</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">88.80</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">82.96</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">94.59</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">93.48</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">86.99</font></td>
+		<td align="center" valign=middle sdval="78.66" sdnum="2052;"><font face="Times New Roman">78.66</font></td>
+		<td align="center" valign=middle sdval="74.9" sdnum="2052;"><font face="Times New Roman">74.9</font></td>
+		<td align="center" valign=middle sdval="60.45" sdnum="2052;"><font face="Times New Roman">60.45</font></td>
+		<td align="center" valign=middle sdval="82.38" sdnum="2052;"><font face="Times New Roman">82.38</font></td>
+		<td align="center" valign=middle sdval="78.43" sdnum="2052;"><font face="Times New Roman">78.43</font></td>
+		<td align="center" valign=middle sdval="62.36" sdnum="2052;"><font face="Times New Roman">62.36</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">54.02</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">He et al. [12]</font></td>
+		<td height="20" align="center" valign=middle><font face="Times New Roman">Lyu et al. [11]</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">Mask TextSpotter</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">ECCV</font></td>
+		<td align="center" valign=middle sdval="2018" sdnum="2052;"><font face="Times New Roman">2018</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" valign=middle sdval="92.2" sdnum="2052;"><font face="Times New Roman">92.2</font></td>
+		<td align="center" valign=middle sdval="91.1" sdnum="2052;"><font face="Times New Roman">91.1</font></td>
+		<td align="center" valign=middle sdval="86.5" sdnum="2052;"><font face="Times New Roman">86.5</font></td>
+		<td align="center" valign=middle sdval="92.5" sdnum="2052;"><font face="Times New Roman">92.5</font></td>
+		<td align="center" valign=middle sdval="92" sdnum="2052;"><font face="Times New Roman">92</font></td>
+		<td align="center" valign=middle sdval="88.2" sdnum="2052;"><font face="Times New Roman">88.2</font></td>
+		<td align="center" valign=middle sdval="79.3" sdnum="2052;"><font face="Times New Roman">79.3</font></td>
+		<td align="center" valign=middle sdval="73" sdnum="2052;"><font face="Times New Roman">73</font></td>
+		<td align="center" valign=middle sdval="62.4" sdnum="2052;"><font face="Times New Roman">62.4</font></td>
+		<td align="center" valign=middle sdval="79.3" sdnum="2052;"><font face="Times New Roman">79.3</font></td>
+		<td align="center" valign=middle sdval="74.5" sdnum="2052;"><font face="Times New Roman">74.5</font></td>
+		<td align="center" valign=middle sdval="64.2" sdnum="2052;"><font face="Times New Roman">64.2</font></td>
+		<td align="center" valign=middle sdval="52.9" sdnum="2052;"><font face="Times New Roman">52.9</font></td>
+		<td align="center" valign=middle sdval="71.8" sdnum="2052;"><font face="Times New Roman">71.8</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center" valign=middle><font face="Times New Roman">He et al. [12]</font></td>
 		<td align="center" valign=middle><br></td>
-		<td align="center" valign=middle><font face="Arial">CVPR</font></td>
-		<td align="center" valign=middle sdval="2018" sdnum="2052;"><font face="Arial">2018</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" valign=middle sdval="91" sdnum="2052;"><font face="Arial">91</font></td>
-		<td align="center" valign=middle sdval="89" sdnum="2052;"><font face="Arial">89</font></td>
-		<td align="center" valign=middle sdval="86" sdnum="2052;"><font face="Arial">86</font></td>
-		<td align="center" valign=middle sdval="93" sdnum="2052;"><font face="Arial">93</font></td>
-		<td align="center" valign=middle sdval="92" sdnum="2052;"><font face="Arial">92</font></td>
-		<td align="center" valign=middle sdval="87" sdnum="2052;"><font face="Arial">87</font></td>
-		<td align="center" valign=middle sdval="82" sdnum="2052;"><font face="Arial">82</font></td>
-		<td align="center" valign=middle sdval="77" sdnum="2052;"><font face="Arial">77</font></td>
-		<td align="center" valign=middle sdval="63" sdnum="2052;"><font face="Arial">63</font></td>
-		<td align="center" valign=middle sdval="85" sdnum="2052;"><font face="Arial">85</font></td>
-		<td align="center" valign=middle sdval="80" sdnum="2052;"><font face="Arial">80</font></td>
-		<td align="center" valign=middle sdval="65" sdnum="2052;"><font face="Arial">65</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">CVPR</font></td>
+		<td align="center" valign=middle sdval="2018" sdnum="2052;"><font face="Times New Roman">2018</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" valign=middle sdval="91" sdnum="2052;"><font face="Times New Roman">91</font></td>
+		<td align="center" valign=middle sdval="89" sdnum="2052;"><font face="Times New Roman">89</font></td>
+		<td align="center" valign=middle sdval="86" sdnum="2052;"><font face="Times New Roman">86</font></td>
+		<td align="center" valign=middle sdval="93" sdnum="2052;"><font face="Times New Roman">93</font></td>
+		<td align="center" valign=middle sdval="92" sdnum="2052;"><font face="Times New Roman">92</font></td>
+		<td align="center" valign=middle sdval="87" sdnum="2052;"><font face="Times New Roman">87</font></td>
+		<td align="center" valign=middle sdval="82" sdnum="2052;"><font face="Times New Roman">82</font></td>
+		<td align="center" valign=middle sdval="77" sdnum="2052;"><font face="Times New Roman">77</font></td>
+		<td align="center" valign=middle sdval="63" sdnum="2052;"><font face="Times New Roman">63</font></td>
+		<td align="center" valign=middle sdval="85" sdnum="2052;"><font face="Times New Roman">85</font></td>
+		<td align="center" valign=middle sdval="80" sdnum="2052;"><font face="Times New Roman">80</font></td>
+		<td align="center" valign=middle sdval="65" sdnum="2052;"><font face="Times New Roman">65</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Liu et al. [13]</font></td>
-		<td align="center" valign=middle><font face="Arial">FOTS</font></td>
-		<td align="center" valign=middle><font face="Arial">CVPR</font></td>
-		<td align="center" valign=middle sdval="2018" sdnum="2052;"><font face="Arial">2018</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" valign=middle sdval="91.99" sdnum="2052;"><font face="Arial">91.99</font></td>
-		<td align="center" valign=middle sdval="90.11" sdnum="2052;"><font face="Arial">90.11</font></td>
-		<td align="center" valign=middle sdval="84.77" sdnum="2052;"><font face="Arial">84.77</font></td>
-		<td align="center" valign=middle sdval="95.94" sdnum="2052;"><font face="Arial">95.94</font></td>
-		<td align="center" valign=middle sdval="93.9" sdnum="2052;"><font face="Arial">93.9</font></td>
-		<td align="center" valign=middle sdval="87.76" sdnum="2052;"><font face="Arial">87.76</font></td>
-		<td align="center" valign=middle sdval="83.55" sdnum="2052;"><font face="Arial">83.55</font></td>
-		<td align="center" valign=middle sdval="79.11" sdnum="2052;"><font face="Arial">79.11</font></td>
-		<td align="center" valign=middle sdval="65.33" sdnum="2052;"><font face="Arial">65.33</font></td>
-		<td align="center" valign=middle sdval="87.01" sdnum="2052;"><font face="Arial">87.01</font></td>
-		<td align="center" valign=middle sdval="82.39" sdnum="2052;"><font face="Arial">82.39</font></td>
-		<td align="center" valign=middle sdval="67.97" sdnum="2052;"><font face="Arial">67.97</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td height="20" align="center" valign=middle><font face="Times New Roman">Liu et al. [13]</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">FOTS</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">CVPR</font></td>
+		<td align="center" valign=middle sdval="2018" sdnum="2052;"><font face="Times New Roman">2018</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" valign=middle sdval="91.99" sdnum="2052;"><font face="Times New Roman">91.99</font></td>
+		<td align="center" valign=middle sdval="90.11" sdnum="2052;"><font face="Times New Roman">90.11</font></td>
+		<td align="center" valign=middle sdval="84.77" sdnum="2052;"><font face="Times New Roman">84.77</font></td>
+		<td align="center" valign=middle sdval="95.94" sdnum="2052;"><font face="Times New Roman">95.94</font></td>
+		<td align="center" valign=middle sdval="93.9" sdnum="2052;"><font face="Times New Roman">93.9</font></td>
+		<td align="center" valign=middle sdval="87.76" sdnum="2052;"><font face="Times New Roman">87.76</font></td>
+		<td align="center" valign=middle sdval="83.55" sdnum="2052;"><font face="Times New Roman">83.55</font></td>
+		<td align="center" valign=middle sdval="79.11" sdnum="2052;"><font face="Times New Roman">79.11</font></td>
+		<td align="center" valign=middle sdval="65.33" sdnum="2052;"><font face="Times New Roman">65.33</font></td>
+		<td align="center" valign=middle sdval="87.01" sdnum="2052;"><font face="Times New Roman">87.01</font></td>
+		<td align="center" valign=middle sdval="82.39" sdnum="2052;"><font face="Times New Roman">82.39</font></td>
+		<td align="center" valign=middle sdval="67.97" sdnum="2052;"><font face="Times New Roman">67.97</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center" valign=middle><font face="Arial">Liao et al. [14]</font></td>
-		<td align="center" valign=middle><font face="Arial">TextBoxes++</font></td>
-		<td align="center" valign=middle><font face="Arial">TIP</font></td>
-		<td align="center" valign=middle sdval="2018" sdnum="2052;"><font face="Arial">2018</font></td>
-		<td align="center" valign=middle sdval="64" sdnum="2052;"><font face="Arial">64</font></td>
-		<td align="center" valign=middle sdval="84" sdnum="2052;"><font face="Arial">84</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" valign=middle sdval="93" sdnum="2052;"><font face="Arial">93</font></td>
-		<td align="center" valign=middle sdval="92" sdnum="2052;"><font face="Arial">92</font></td>
-		<td align="center" valign=middle sdval="85" sdnum="2052;"><font face="Arial">85</font></td>
-		<td align="center" valign=middle sdval="96" sdnum="2052;"><font face="Arial">96</font></td>
-		<td align="center" valign=middle sdval="95" sdnum="2052;"><font face="Arial">95</font></td>
-		<td align="center" valign=middle sdval="87" sdnum="2052;"><font face="Arial">87</font></td>
-		<td align="center" valign=middle sdval="73.3" sdnum="2052;"><font face="Arial">73.3</font></td>
-		<td align="center" valign=middle sdval="65.9" sdnum="2052;"><font face="Arial">65.9</font></td>
-		<td align="center" valign=middle sdval="51.9" sdnum="2052;"><font face="Arial">51.9</font></td>
-		<td align="center" valign=middle sdval="76.5" sdnum="2052;"><font face="Arial">76.5</font></td>
-		<td align="center" valign=middle sdval="69" sdnum="2052;"><font face="Arial">69</font></td>
-		<td align="center" valign=middle sdval="54.4" sdnum="2052;"><font face="Arial">54.4</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td height="20" align="center" valign=middle><font face="Times New Roman">Liao et al. [14]</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">TextBoxes++</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">TIP</font></td>
+		<td align="center" valign=middle sdval="2018" sdnum="2052;"><font face="Times New Roman">2018</font></td>
+		<td align="center" valign=middle sdval="64" sdnum="2052;"><font face="Times New Roman">64</font></td>
+		<td align="center" valign=middle sdval="84" sdnum="2052;"><font face="Times New Roman">84</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" valign=middle sdval="93" sdnum="2052;"><font face="Times New Roman">93</font></td>
+		<td align="center" valign=middle sdval="92" sdnum="2052;"><font face="Times New Roman">92</font></td>
+		<td align="center" valign=middle sdval="85" sdnum="2052;"><font face="Times New Roman">85</font></td>
+		<td align="center" valign=middle sdval="96" sdnum="2052;"><font face="Times New Roman">96</font></td>
+		<td align="center" valign=middle sdval="95" sdnum="2052;"><font face="Times New Roman">95</font></td>
+		<td align="center" valign=middle sdval="87" sdnum="2052;"><font face="Times New Roman">87</font></td>
+		<td align="center" valign=middle sdval="73.3" sdnum="2052;"><font face="Times New Roman">73.3</font></td>
+		<td align="center" valign=middle sdval="65.9" sdnum="2052;"><font face="Times New Roman">65.9</font></td>
+		<td align="center" valign=middle sdval="51.9" sdnum="2052;"><font face="Times New Roman">51.9</font></td>
+		<td align="center" valign=middle sdval="76.5" sdnum="2052;"><font face="Times New Roman">76.5</font></td>
+		<td align="center" valign=middle sdval="69" sdnum="2052;"><font face="Times New Roman">69</font></td>
+		<td align="center" valign=middle sdval="54.4" sdnum="2052;"><font face="Times New Roman">54.4</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
 	</tr>
 	<tr>
-		<td height="20" align="center">Liao et al. [15]</td>
-		<td align="center" valign=middle><font face="Arial">Mask TextSpotter</font></td>
-		<td align="center">TPAMI</td>
+		<td height="20" align="center"><font face="Times New Roman">Liao et al. [15]</font></td>
+		<td align="center" valign=middle><font face="Times New Roman">Mask TextSpotter</font></td>
+		<td align="center"><font face="Times New Roman">TPAMI</font></td>
 		<td align="center" sdval="2019" sdnum="2052;">2019</td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
-		<td align="center" sdnum="2052;0;@"><font face="Arial">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
 		<td align="center" sdval="93.3" sdnum="2052;">93.3</td>
 		<td align="center" sdval="91.3" sdnum="2052;">91.3</td>
 		<td align="center" sdval="88.2" sdnum="2052;">88.2</td>
@@ -835,9 +982,185 @@
 		<td align="center" sdval="73.6" sdnum="2052;">73.6</td>
 		<td align="center" sdval="65.3" sdnum="2052;">65.3</td>
 		<td align="center" sdval="77.4" sdnum="2052;">77.4</td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center"><font face="Times New Roman">Xing et al. [23]</font></td>
+		<td align="center"><font face="Times New Roman">CharNet</font></td>
+		<td align="center"><font face="Times New Roman">ICCV</font></td>
+		<td align="center" sdval="2019" sdnum="2052;">2019</td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdval="85.05" sdnum="2052;">85.05</td>
+		<td align="center" sdval="81.25" sdnum="2052;">81.25</td>
+		<td align="center" sdval="71.08" sdnum="2052;">71.08</td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdval="69.2" sdnum="2052;">69.2</td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center"><font face="Times New Roman">Feng et al. [24]</font></td>
+		<td align="center"><font face="Times New Roman">TextDragon </font></td>
+		<td align="center"><font face="Times New Roman">ICCV</font></td>
+		<td align="center" sdval="2019" sdnum="2052;">2019</td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdval="82.54" sdnum="2052;">82.54</td>
+		<td align="center" sdval="78.34" sdnum="2052;">78.34</td>
+		<td align="center" sdval="65.15" sdnum="2052;">65.15</td>
+		<td align="center" sdval="86.22" sdnum="2052;">86.22</td>
+		<td align="center" sdval="81.62" sdnum="2052;">81.62</td>
+		<td align="center" sdval="68.03" sdnum="2052;">68.03</td>
+		<td align="center" sdval="48.8" sdnum="2052;">48.8</td>
+		<td align="center" sdval="74.8" sdnum="2052;">74.8</td>
+		<td align="center" sdval="39.7" sdnum="2052;">39.7</td>
+		<td align="center" sdval="72.4" sdnum="2052;">72.4</td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center"><font face="Times New Roman">Qin et al. [25]</font></td>
+		<td align="center"><br></td>
+		<td align="center"><font face="Times New Roman">ICCV</font></td>
+		<td align="center" sdval="2019" sdnum="2052;">2019</td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdval="85.51" sdnum="2052;">85.51</td>
+		<td align="center" sdval="81.91" sdnum="2052;">81.91</td>
+		<td align="center" sdval="69.94" sdnum="2052;">69.94</td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdval="70.7" sdnum="2052;">70.7</td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center"><font face="Times New Roman">Qiao et al. [26]</font></td>
+		<td align="center"><font face="Times New Roman">Text Perceptron </font></td>
+		<td align="center"><font face="Times New Roman">AAAI</font></td>
+		<td align="center" sdval="2020" sdnum="2052;">2020</td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdval="91.4" sdnum="2052;">91.4</td>
+		<td align="center" sdval="90.7" sdnum="2052;">90.7</td>
+		<td align="center" sdval="85.8" sdnum="2052;">85.8</td>
+		<td align="center" sdval="94.9" sdnum="2052;">94.9</td>
+		<td align="center" sdval="94" sdnum="2052;">94</td>
+		<td align="center" sdval="88.5" sdnum="2052;">88.5</td>
+		<td align="center" sdval="80.5" sdnum="2052;">80.5</td>
+		<td align="center" sdval="76.6" sdnum="2052;">76.6</td>
+		<td align="center" sdval="65.1" sdnum="2052;">65.1</td>
+		<td align="center" sdval="84.1" sdnum="2052;">84.1</td>
+		<td align="center" sdval="79.4" sdnum="2052;">79.4</td>
+		<td align="center" sdval="67.9" sdnum="2052;">67.9</td>
+		<td align="center" sdval="69.7" sdnum="2052;">69.7</td>
+		<td align="center" sdval="78.3" sdnum="2052;">78.3</td>
+		<td align="center" sdval="57" sdnum="2052;">57</td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+	</tr>
+	<tr>
+		<td height="20" align="center"><font face="Times New Roman">Wang et al. [27]</font></td>
+		<td align="center"><br></td>
+		<td align="center"><font face="Times New Roman">AAAI</font></td>
+		<td align="center" sdval="2020" sdnum="2052;">2020</td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdval="88.2" sdnum="2052;">88.2</td>
+		<td align="center" sdval="87.7" sdnum="2052;">87.7</td>
+		<td align="center" sdval="84.1" sdnum="2052;">84.1</td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdval="79.7" sdnum="2052;">79.7</td>
+		<td align="center" sdval="75.2" sdnum="2052;">75.2</td>
+		<td align="center" sdval="64.1" sdnum="2052;">64.1</td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdval="65" sdnum="2052;">65</td>
+		<td align="center" sdval="76.1" sdnum="2052;">76.1</td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdval="41.3" sdnum="2052;">41.3</td>
+	</tr>
+	<tr>
+		<td height="20" align="center"><font face="Times New Roman">Liu et al. [28]</font></td>
+		<td align="center"><font face="Times New Roman">ABCNet</font></td>
+		<td align="center"><font face="Times New Roman">CVPR</font></td>
+		<td align="center" sdval="2020" sdnum="2052;">2020</td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
+		<td align="center" sdval="69.5" sdnum="2052;">69.5</td>
+		<td align="center" sdval="78.4" sdnum="2052;">78.4</td>
+		<td align="center" sdval="45.2" sdnum="2052;">45.2</td>
+		<td align="center" sdval="74.1" sdnum="2052;">74.1</td>
+		<td align="center" sdnum="2052;0;@"><font face="Times New Roman">~</font></td>
 	</tr>
 </table>
-
 
 <a id="3-field-survey"></a>
 ## 3. Survey
@@ -912,9 +1235,23 @@
 - [21] Chee C K, Chan C S. **Total-text: A comprehensive dataset for scene text detection and recognition**.Document Analysis and Recognition (ICDAR), 2017 14th IAPR International Conference on. IEEE, 2017, 1: 935-942.[Paper](https://arxiv.org/abs/1710.10400)
 
 
+- [22] Y. Sun, C. Zhang, Z. Huang, J. Liu, J. Han, and E. Ding, **TextNet: Irregular Text Reading from Images with an End-to-End Trainable Network**, Asian Conference on Computer Vision (ACCV), Cham, 2018, vol. 11363, no. 1, pp. 83–99.[Paper](https://link.springer.com/chapter/10.1007/978-3-030-20893-6_6)
+
+- [23] Xing L, Tian Z, Huang W, **Convolutional character networks**.In ICCV, 2019.[Paper](http://openaccess.thecvf.com/content_ICCV_2019/papers/Xing_Convolutional_Character_Networks_ICCV_2019_paper.pdf) [code](https://github.com/MalongTech/research-charnet)
+
+- [24] Feng W, He W, Yin F, et al. **TextDragon: An End-to-End Framework for Arbitrary Shaped Text Spotting**.In ICCV, 2019.[Paper](http://openaccess.thecvf.com/content_ICCV_2019/papers/Feng_TextDragon_An_End-to-End_Framework_for_Arbitrary_Shaped_Text_Spotting_ICCV_2019_paper.pdf)
+
+- [25] Qin S, Bissacco A, Raptis M, et al. **Towards unconstrained end-to-end text spotting**.In ICCV, 2019.[Paper](http://openaccess.thecvf.com/content_ICCV_2019/papers/Qin_Towards_Unconstrained_End-to-End_Text_Spotting_ICCV_2019_paper.pdf)
+
+- [26] Qiao L, Tang S, Cheng Z, et al. **Text Perceptron: Towards End-to-End Arbitrary-Shaped Text Spotting**.In AAAI 2020.[Paper](https://www.aaai.org/Papers/AAAI/2020GB/AAAI-QiaoL.893.pdf)
+
+- [27] Wang H, Lu P, Zhang H, et al. **All You Need Is Boundary: Toward Arbitrary-Shaped Text Spotting.** In AAAI 2020.[Paper](https://arxiv.org/abs/1911.09550)
+
+- [28] Liu Y, Chen H, Shen C, et al. **ABCNet: Real-time Scene Text Spotting with Adaptive Bezier-Curve Network** In CVPR, 2020.[Paper](https://arxiv.org/abs/2002.10200)
+[code](https://github.com/Yuliang-Liu/bezier_curve_text_spotting)
 ###
 
-If you find any problems in our resources, or any good papers/codes we have missed, please inform us at    **liuchongyu1996@gmail.com**. Thank you for your contribution. 
+If you find any problems in our resources, or any good papers/codes we have missed, please inform us at    **liuchongyu1996@gmail.com**. Thank you for your contribution.
 
 
 
@@ -928,4 +1265,3 @@ Copyright © 2019 SCUT-DLVC. All Rights Reserved.
         <em></em>
     </p>
 </p>
-
